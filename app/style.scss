@@ -1,0 +1,40 @@
+.step {
+  min-height: 200px;
+  display: flex;
+
+  .left {
+    flex: 50px 0;
+  }
+
+  .right {
+    flex: 100% 0;
+  }
+}
+
+.step .decor {
+  position: relative;
+  height: 100%;
+
+  &::before {
+    position: absolute;
+    z-index: 1;
+    content: '';
+    height: 100%;
+    width: 2px;
+    top: 0;
+    left: calc(50% - 2px);
+    background-color: #ff0000;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: 2;
+    content: '';
+    height: 12px;
+    width: 12px;
+    top: 20px;
+    left: calc(50% - 7px);
+    background-color: blue;
+    border-radius: 50%;
+  }
+}
