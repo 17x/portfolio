@@ -1,9 +1,13 @@
 /**
  * @type {import('next').NextConfig}
  */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   reactStrictMode: false,
   output: 'export',
+  // basePath: isProd ? '/portfolio' : '',
+  assetPrefix: isProd ? '/portfolio/' : '',
   // output: 'standalone',
 
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
