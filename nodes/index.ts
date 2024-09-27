@@ -58,12 +58,12 @@ export const data: FeedNodeData[] = [
       {
         content: 'I made this website as my interview',
         poster: sinaPcPng,
-        link: 'https://17x.github.io/portfolio/sinaPC/'
+        link: './sinaPC/'
       },
       {
         content: 'I made this website as my  ',
         poster: sinaPcPng,
-        link: 'https://17x.github.io/portfolio/sinaPC/'
+        link: './sinaPC/'
       },
       {
         content: 'Started work for SIGBIT Computer Co. Ltd. in Guangzhou',
@@ -73,7 +73,7 @@ export const data: FeedNodeData[] = [
         content: 'Copied a China\'s biggest portal website for my first Frontend developer job interview',
         stacks: 'HTML, CSS, JavaScript, JQuery',
         poster: sinaPcPng,
-        link: 'https://17x.github.io/portfolio/sinaPC/'
+        link: './sinaPC/'
       },
       {
         content: 'Studied HTML, CSS, Javascript and JQuery on W3schools',

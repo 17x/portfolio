@@ -7,7 +7,10 @@ const nextConfig = {
   reactStrictMode: false,
   output: 'export',
   // basePath: isProd ? '/portfolio' : '',
-  assetPrefix: isProd ? '/portfolio/' : '',
+  // assetPrefix: isProd ? '/docs/' : '',
+  // assetPrefix: '.',
+  // assetPrefix: '/',
+  // basePath: '/username.github.io',
   // output: 'standalone',
 
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
