@@ -19,8 +19,8 @@ const nextConfig = {
   // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
   // skipTrailingSlashRedirect: true,
 
-  // Optional: Change the output directory `out` -> `dist`
-  // distDir: 'dist',
+  distDir: '/Users/yahone/projects/17x.github.io/docs',
+  // contentBase
 }
 
 module.exports = nextConfig

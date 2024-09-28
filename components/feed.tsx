@@ -7,11 +7,13 @@ const Feed = ({list}: { list: FeedNodeDataListItem[] }) => {
       {
         list && list.map(({link, poster, content, title, stacks}, idx: number) => (
           <div key={idx}
-               className={'min-h-10 mr-2 mb-2 flex rounded-md overflow-hidden p-2 w-4/6 border border-solid border-neutral-400 hover:border-neutral-700'}>
+               className={'min-h-10 mr-2 mb-2 flex rounded-md overflow-hidden p-4 w-4/6 border border-solid border-neutral-400 hover:border-neutral-700'}>
             {
               poster &&
-              <div className={'mr-2'}>
-                <img className={'inline-block w-20 h-20 object-fill'} src={poster.src} alt="" />
+              <div className={'mr-2 w-20 h-20 flex'}>
+                <img className={'inline-block object-contain rounded-md border border-solid border-neutral-100'}
+                     src={poster.src}
+                     alt="" />
               </div>
             }
             <div className={'flex-1 ' + (poster ? '' : 'content-center')}>

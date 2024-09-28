@@ -1,4 +1,5 @@
 import sinaPcPng from '../assets/sinePc.png'
+import sigbitPng from '../assets/sigbit.jpg'
 import {FeedNodeData} from "../components/type";
 
 export const data: FeedNodeData[] = [
@@ -56,18 +57,9 @@ export const data: FeedNodeData[] = [
     title: 'Very First time',
     list: [
       {
-        content: 'I made this website as my interview',
-        poster: sinaPcPng,
-        link: './sinaPC/'
-      },
-      {
-        content: 'I made this website as my  ',
-        poster: sinaPcPng,
-        link: './sinaPC/'
-      },
-      {
-        content: 'Started work for SIGBIT Computer Co. Ltd. in Guangzhou',
-        link: ''
+        content: 'Started working for SIGBIT Computer Co. Ltd. in Guangzhou',
+        link: '',
+        poster: sigbitPng
       },
       {
         content: 'Copied a China\'s biggest portal website for my first Frontend developer job interview',
