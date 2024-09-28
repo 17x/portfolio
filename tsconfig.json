@@ -26,7 +26,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "/Users/yahone/projects/17x.github.io/docs/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

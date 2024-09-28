@@ -2,7 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const isProd = process.env.NODE_ENV === 'production';
-
+const path = require('path')
 const nextConfig = {
   reactStrictMode: false,
   output: 'export',
@@ -19,7 +19,7 @@ const nextConfig = {
   // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
   // skipTrailingSlashRedirect: true,
 
-  distDir: '/Users/yahone/projects/17x.github.io/docs',
+  distDir: path.resolve('../17x.github.io/docs'),
   // contentBase
 }
 

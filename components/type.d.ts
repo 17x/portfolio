@@ -4,8 +4,9 @@ declare type FeedNodeDataListItem = {
   title?: string,
   content?: string,
   stacks?: string,
-  poster?: StaticImageData,
-  link?: string
+  img?: StaticImageData,
+  link?: string | string[]
+  linkText?: string
 }
 
 declare type FeedNodeData = {
