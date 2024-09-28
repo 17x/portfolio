@@ -81,7 +81,7 @@ export const data: FeedNodeData[] = [
     title: 'Very First time',
     list: [
       {
-        content: 'getting involved AngularJs',
+        content: 'Getting involved AngularJs',
         link: 'https://angularjs.org/',
         img: angular
       },

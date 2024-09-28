@@ -19,7 +19,7 @@ const nextConfig = {
   // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
   // skipTrailingSlashRedirect: true,
 
-  distDir: path.resolve('../17x.github.io/docs'),
+  // distDir: path.resolve('../17x.github.io/docs'),
   // contentBase
 }
 
