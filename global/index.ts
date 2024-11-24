@@ -1,3 +1,3 @@
-const DOC_URL = process.env.NEXT_DOC_URL
-console.log(DOC_URL)
+const DOC_URL = process.env.DOC_URL
+
 export default DOC_URL

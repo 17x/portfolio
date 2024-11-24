@@ -58,7 +58,7 @@ export const data: FeedNodeData[] = [
         content: 'Copied a garment industry website for job interview',
         stacks: 'AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)',
         img: sina,
-        link: './sinaPC/',
+        link: '/sinaPC/',
         linkText: 'Demo link'
       },
     ],
@@ -93,14 +93,14 @@ export const data: FeedNodeData[] = [
       {
         content: `Started working for SIGBIT Computer Co. Ltd. in Guangzhou. Making embedded HTML5 page for Apps`,
         link: [
-          './wireless/dengmiSubPage/',
-          './wireless/leshihuiyuanmianfeiling/',
-          './wireless/LiRongHao/',
-          './wireless/muqinjie/',
-          './wireless/olduserhuikui/',
-          './wireless/qiandaosonghaoli/',
-          './wireless/tianjinmobiledownload2016chunjie/',
-          './wireless/tuniu/',
+          '/wireless/dengmiSubPage/',
+          '/wireless/leshihuiyuanmianfeiling/',
+          '/wireless/LiRongHao/',
+          '/wireless/muqinjie/',
+          '/wireless/olduserhuikui/',
+          '/wireless/qiandaosonghaoli/',
+          '/wireless/tianjinmobiledownload2016chunjie/',
+          '/wireless/tuniu/',
         ],
         img: sigbit
       },
@@ -108,7 +108,7 @@ export const data: FeedNodeData[] = [
         content: 'Copied a portal website for my first Frontend developer job interview',
         stacks: 'HTML, CSS, JavaScript, JQuery',
         img: sina,
-        link: './sinaPC/',
+        link: '/sinaPC/',
         linkText: 'demo link'
       },
       {
