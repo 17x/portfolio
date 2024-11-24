@@ -1,4 +1,4 @@
-import sinaPc from '../assets/sinaPc.png'
+import sina from '../assets/sinaLogo.png'
 import sigbit from '../assets/sigbit.png'
 import ankai from '../assets/ankai.png'
 import angular from '../assets/angularjs.png'
@@ -56,8 +56,8 @@ export const data: FeedNodeData[] = [
       },
       {
         content: 'Copied a garment industry website for job interview',
-        stacks: 'HTML, CSS, AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)',
-        img: sinaPc,
+        stacks: 'AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)',
+        img: sina,
         link: './sinaPC/',
         linkText: 'Demo link'
       },
@@ -92,15 +92,24 @@ export const data: FeedNodeData[] = [
       },
       {
         content: `Started working for SIGBIT Computer Co. Ltd. in Guangzhou. Making embedded HTML5 page for Apps`,
-        link: [''],
+        link: [
+          './wireless/dengmiSubPage/',
+          './wireless/leshihuiyuanmianfeiling/',
+          './wireless/LiRongHao/',
+          './wireless/muqinjie/',
+          './wireless/olduserhuikui/',
+          './wireless/qiandaosonghaoli/',
+          './wireless/tianjinmobiledownload2016chunjie/',
+          './wireless/tuniu/',
+        ],
         img: sigbit
       },
       {
         content: 'Copied a portal website for my first Frontend developer job interview',
         stacks: 'HTML, CSS, JavaScript, JQuery',
-        img: sinaPc,
+        img: sina,
         link: './sinaPC/',
-        linkText: 'Demo link'
+        linkText: 'demo link'
       },
       {
         content: 'Studied HTML, CSS, Javascript and JQuery on W3schools',

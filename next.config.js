@@ -1,26 +1,18 @@
 /**
  * @type {import('next').NextConfig}
  */
-const isProd = process.env.NODE_ENV === 'production';
-const path = require('path')
+// const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   reactStrictMode: false,
   output: 'export',
-  // basePath: isProd ? '/portfolio' : '',
-  // assetPrefix: isProd ? '/docs/' : '',
-  // assetPrefix: '.',
-  // assetPrefix: '/',
-  // basePath: '/username.github.io',
-  // output: 'standalone',
-
-  // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
-  // trailingSlash: true,
-
-  // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
-  // skipTrailingSlashRedirect: true,
-
-  // distDir: path.resolve('../17x.github.io/docs'),
-  // contentBase
+  // basePath: path.resolve(__dirname,'../17x.github.io/docs/'),
+  // distDir: path.resolve(__dirname,'../17x.github.io/docs'),
+  logging: {
+    fetches: {
+      fullUrl: true,
+      hmrRefreshes: true,
+    },
+  }
 }
 
 module.exports = nextConfig
