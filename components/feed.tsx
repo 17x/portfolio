@@ -32,7 +32,7 @@ const Feed = ({list}: { list: FeedNodeDataListItem[] }) => {
                 <div className={'mt-1 text-sm flex'}>
                   {
                     linkList.map((value, index) => {
-                      console.log(value, DOC_URL)
+                      // console.log(value, DOC_URL)
                       value = value.indexOf('.') != -1 ? value : DOC_URL + value
                       return (
                         false ?

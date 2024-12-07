@@ -8,7 +8,7 @@ const Page = () => {
 
   useEffect(() => {
     async function getData() {
-      const {data: nodeList} = await import('../nodes/index')
+      const {data: nodeList} = await import('../timeline/index')
       setFeeds(nodeList)
     }
 
