@@ -15,7 +15,7 @@ const ClusterFeed: FC<ModalProps> = ({data: {icon, list, description}, onClick, 
       <IconComp icon={icon} />
       <ContentComp icon={icon} description={description}>
         <div className={'mt-1 text-sm flex flex-wrap items-center'}>
-          <h1 className={'mr-2'}>Links: </h1>
+          <h1 className={'mr-2'}>Samples: </h1>
           {
             list.map((item, index) => {
               return (

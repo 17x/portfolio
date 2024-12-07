@@ -14,12 +14,18 @@ const DemoSiteFrame = ({demo: {media, link}}: Props) => {
     viewPortWidth = 'w-[350px]'
     viewPortHeight = 'h-[650px]'
   }
+  const src = (link.indexOf('.') === -1 ? DOC_URL : '') + link
 
   return (
     <div className={viewPortHeight + ' ' + viewPortWidth}>
+      <div className={'absolute -top-6 left-0 w-full text-center'}>
+        <a target={'_blank'} href={src} className={'w-8 text-white hover:text-blue-800'}>
+          Open in new tab
+        </a>
+      </div>
       <iframe width={'100%'}
               height={'100%'}
-              src={(link.indexOf('.') === -1 ? DOC_URL : '') + link}></iframe>
+              src={src}></iframe>
     </div>
   );
 };
