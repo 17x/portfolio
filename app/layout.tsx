@@ -1,5 +1,4 @@
 import './globals.scss';
-// import './style.scss';
 import Header from "./header";
 import React from "react";
 

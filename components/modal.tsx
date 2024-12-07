@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {createPortal} from "react-dom";
 
 interface ModalProps {
@@ -7,7 +7,7 @@ interface ModalProps {
   children?: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({children, onClose}) => {
+const Modal: FC<ModalProps> = ({children, onClose}) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       console.log(event.key)
@@ -32,24 +32,23 @@ const Modal: React.FC<ModalProps> = ({children, onClose}) => {
     }
   }, [onClose]);
 
-  // if (!isOpen) return null;
-
   return createPortal(
     <div
-      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+      className="fixed z-20 inset-0 flex items-center justify-center bg-black bg-opacity-50"
       onClick={onClose}
     >
+      <button
+        className="absolute block w-auto h-auto top-0 right-3 text-white hover:text-gray-600 text-4xl"
+        onClick={onClose}
+        aria-label="Close modal"
+      >
+        &times;
+      </button>
       <div
         className="relative bg-white rounded-lg shadow-lg"
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
       >
-        <button
-          className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
-          onClick={onClose}
-          aria-label="Close modal"
-        >
-          &times;
-        </button>
+
         {children}
       </div>
     </div>,

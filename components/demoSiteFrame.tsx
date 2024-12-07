@@ -1,10 +1,10 @@
-type Props = {
-  src: string
-  media?: DemoMediaType
-};
-const DemoSiteFrame = ({src, media = 'l'}: Props) => {
-  let viewPortWidth = 'w-[50rem]'
-  let viewPortHeight = 'h-[30rem]'
+import DOC_URL from "../global";
+
+type Props = { demo: DemoLink }
+const DemoSiteFrame = ({demo: {media, link}}: Props) => {
+  let viewPortWidth = 'w-[1080px]'
+  let viewPortHeight = 'h-[80vh]'
+  // console.log(media, link)
 
   if (media === 'm') {
 
@@ -12,12 +12,14 @@ const DemoSiteFrame = ({src, media = 'l'}: Props) => {
 
   if (media === 's') {
     viewPortWidth = 'w-[350px]'
-    viewPortHeight = 'h-[600px]'
+    viewPortHeight = 'h-[650px]'
   }
+
   return (
-    // max-w-md
     <div className={viewPortHeight + ' ' + viewPortWidth}>
-      <iframe width={'100%'} height={'100%'} src={src}></iframe>
+      <iframe width={'100%'}
+              height={'100%'}
+              src={(link.indexOf('.') === -1 ? DOC_URL : '') + link}></iframe>
     </div>
   );
 };

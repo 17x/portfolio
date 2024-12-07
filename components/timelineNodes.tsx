@@ -1,6 +1,5 @@
 import React from 'react';
-import Feed from "./feed";
-import {FeedNodeData} from "./type";
+import Index from "./feed";
 
 const COLORS = [
   "pink-400", "rose-400", "red-400", "orange-400", "amber-400",
@@ -19,7 +18,7 @@ const createGradient = colors => {
   });
   return `${baseClasses} ${gradientClasses.join(" ")}`;
 };
-const Feeds = ({feeds}: { feeds: FeedNodeData[] }) => {
+const TimelineNodes = ({feeds}: { feeds: TimelineNode[] }) => {
   let colors = [...COLORS]
   colors.length = feeds.length
 
@@ -50,13 +49,13 @@ const Feeds = ({feeds}: { feeds: FeedNodeData[] }) => {
                 <div className={'inline-block align-middle w-4 h-1 ' + bgColor}></div>
                 <div className={'inline-block align-middle ml-4 w-4 h-4 drop-shadow-lg rounded-3xl border border-solid border-gray-200 ' + bgColor}></div>
                 <h1 className={'inline-block align-middle ml-4 text-3xl font-bold drop-shadow-lg ' + textColor}>{feed.year}</h1>
-                <h4 className={'inline-block align-middle ml-4 ' + textColor}>{feed.title}</h4>
+                <h4 className={'inline-block align-middle ml-4 ' + textColor}>{feed.description}</h4>
               </div>
 
               <div className={'ml-16 pb-20'}>
                 <div className={'ml-0 mt-4 flex-1 pb-0 pl-0 rounded-lg border-' + colors[idx]}>
                   {/*<h4 className={textColor}>{feed.title}</h4>*/}
-                  <Feed list={feed.list} sectionTheme={colors[idx]} />
+                  <Index data={feed.data} sectionTheme={colors[idx]} />
                 </div>
               </div>
             </div>
@@ -67,4 +66,4 @@ const Feeds = ({feeds}: { feeds: FeedNodeData[] }) => {
 
 };
 
-export default Feeds;
+export default TimelineNodes;

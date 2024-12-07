@@ -2,117 +2,132 @@ import sina from '../assets/sinaLogo.png'
 import sigbit from '../assets/sigbit.png'
 import ankai from '../assets/ankai.png'
 import angular from '../assets/angularjs.png'
-import {FeedNodeData} from "../components/type";
 
-export const data: FeedNodeData[] = [
+export const data: TimelineNode[] = [
   {
     year: '2024',
-    title: 'hello world3',
-    list: [
-      {
-        content: '',
-        // poster: '',
-        link: ''
-      }
-    ]
+    description: 'hello world3',
+    data: []
   },
   {
     year: '2023',
-    title: 'Very First time',
-    list: [],
+    description: 'Very First time',
+    data: [],
   },
   {
     year: '2022',
-    title: 'Very First time',
-    list: [],
+    description: 'Very First time',
+    data: [],
   },
   {
     year: '2021',
-    title: 'Very First time',
-    list: [],
+    description: 'Very First time',
+    data: [],
   },
   {
     year: '2020',
-    title: 'Very First time',
-    list: [],
+    description: 'Very First time',
+    data: [],
   },
   {
     year: '2019',
-    title: 'Very First time',
-    list: [],
+    description: 'Very First time',
+    data: [],
   },
   {
     year: '2018',
-    title: 'Very First time',
-    list: [],
-  }, {
+    description: 'Very First time',
+    data: [],
+  },
+  {
     year: '2017',
-    title: 'Very First time',
-    list: [
+    description: 'Very First time',
+    data: [
       {
-        content: 'Started working for Ankai IT',
-        link: 'https://www.akxx.tech/about.html#gsjj',
-        img: ankai
+        type: 'simple',
+        description: 'Started working for Ankai IT',
+        demo: {
+          link: 'https://www.akxx.tech/about.html#gsjj',
+          media: 'l'
+        },
+        icon: ankai
       },
       {
-        content: 'Copied a garment industry website for job interview',
+        type: 'simple',
+        media: 's',
+        description: 'Copied a garment industry website for job interview',
         stacks: 'AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)',
-        link: '/fzwjg/dist/',
-        linkText: 'Demo link'
+        demo: {
+          link: '/fzwjg/dist/',
+          media: 's',
+          linkText: 'Demo link'
+        },
       },
     ],
   },
   {
     year: '2016',
-    list: [
+    data: [
       {
-        content: 'August - Break time until next year',
+        type: 'simple',
+        description: 'August - Break time until next year',
       },
       {
-        content: 'diving deeper into AngularJs ecosystem',
-        link: 'https://angularjs.org/',
-        img: angular
+        type: 'simple',
+        description: 'diving deeper into AngularJs ecosystem',
+        demo: {
+          link: 'https://angularjs.org/',
+          media: 'l'
+        }
+        ,
+        icon: angular
       },
     ],
   },
   {
     year: '2015',
-    title: 'Very First time',
-    list: [
+    description: 'Very First time',
+    data: [
       {
-        content: 'Getting involved AngularJs',
-        link: 'https://angularjs.org/',
-        img: angular
+        type: 'simple',
+        description: 'Getting involved in AngularJs',
+        demo: {
+          link: 'https://angularjs.org/',
+          media: 'l'
+        }
+        ,
+        icon: angular
       },
       {
-        content: 'Making embedded HTML5 page for Apps',
-        link: '',
-        img: angular
-      },
-      {
-        content: `Started working for SIGBIT Computer Co. Ltd. in Guangzhou. Making embedded HTML5 page for Apps`,
-        link: [
-          '/wireless/dengmiSubPage/',
-          '/wireless/leshihuiyuanmianfeiling/',
-          '/wireless/LiRongHao/',
-          '/wireless/muqinjie/',
-          '/wireless/olduserhuikui/',
-          '/wireless/qiandaosonghaoli/',
-          '/wireless/tianjinmobiledownload2016chunjie/',
-          '/wireless/tuniu/',
+        type: 'cluster',
+        description: `Started working for SIGBIT Computer Co. Ltd. in Guangzhou. Making a bunch of HTML5 pages`,
+        list: [
+          {link: '/wireless/dengmiSubPage/', media: 's'},
+          {link: '/wireless/leshihuiyuanmianfeiling/', media: 's'},
+          {link: '/wireless/LiRongHao/', media: 's'},
+          {link: '/wireless/muqinjie/', media: 's'},
+          {link: '/wireless/olduserhuikui/', media: 's'},
+          {link: '/wireless/qiandaosonghaoli/', media: 's'},
+          {link: '/wireless/tianjinmobiledownload2016chunjie/', media: 's'},
+          {link: '/wireless/tuniu/', media: 's'},
         ],
-        img: sigbit
+        icon: sigbit
       },
       {
-        content: 'Copied a portal website for my first Frontend developer job interview',
-        stacks: 'HTML, CSS, JavaScript, JQuery',
-        img: sina,
-        link: '/sinaPC/',
-        linkText: 'demo link'
+        type: "simple",
+        description: 'An imitation for my first Frontend developer job interview',
+        demo: {
+          stacks: 'HTML, CSS, JavaScript, JQuery',
+          // icon: sina,
+          media: 'l',
+          link: '/sinaPC/',
+          linkText: 'demo link'
+        },
+        icon: sina,
       },
       {
-        content: 'Studied HTML, CSS, Javascript and JQuery on W3schools',
-        link: ''
+        type: "simple",
+        description: 'Studied HTML, CSS, Javascript and JQuery on W3schools',
       }
     ],
   },
