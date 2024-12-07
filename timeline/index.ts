@@ -2,6 +2,7 @@ import sina from '../assets/sinaLogo.png'
 import sigbit from '../assets/sigbit.png'
 import ankai from '../assets/ankai.png'
 import angular from '../assets/angularjs.png'
+import react from '../assets/react.png'
 
 export const data: TimelineNode[] = [
   {
@@ -37,7 +38,18 @@ export const data: TimelineNode[] = [
   {
     year: '2018',
     description: 'Very First time',
-    data: [],
+    data: [
+      {
+        type: 'simple',
+        description: 'Getting involved in React',
+        demo: {
+          link: 'https://react.dev/learn',
+          linkText: 'Official website',
+          media: 'l'
+        },
+        icon: react
+      }
+    ],
   },
   {
     year: '2017',
@@ -47,7 +59,8 @@ export const data: TimelineNode[] = [
         type: 'simple',
         description: 'Started working for Ankai IT',
         demo: {
-          link: 'https://www.akxx.tech/about.html#gsjj',
+          link: 'https://www.akxx.tech/',
+          linkText: 'Company website',
           media: 'l'
         },
         icon: ankai
@@ -55,9 +68,9 @@ export const data: TimelineNode[] = [
       {
         type: 'simple',
         media: 's',
-        description: 'Copied a garment industry website for job interview',
-        stacks: 'AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)',
+        description: 'Imitated a garment industry website for job interview',
         demo: {
+          stacks: 'AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)',
           link: '/fzwjg/dist/',
           media: 's',
           linkText: 'Demo link'
@@ -74,12 +87,12 @@ export const data: TimelineNode[] = [
       },
       {
         type: 'simple',
-        description: 'diving deeper into AngularJs ecosystem',
+        description: 'diving deeper into AngularJs ecosystem, developed',
         demo: {
           link: 'https://angularjs.org/',
+          linkText: 'Official website',
           media: 'l'
-        }
-        ,
+        },
         icon: angular
       },
     ],
@@ -93,6 +106,7 @@ export const data: TimelineNode[] = [
         description: 'Getting involved in AngularJs',
         demo: {
           link: 'https://angularjs.org/',
+          linkText: 'Official website',
           media: 'l'
         }
         ,
