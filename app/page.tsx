@@ -16,7 +16,7 @@ const Page = () => {
 
   }, []);
 
-  return <div className={'w-3/4 mx-auto my-20'}>
+  return <div className={'w-5/6 mx-auto my-20'}>
     <Feeds feeds={feeds} />
   </div>
 }

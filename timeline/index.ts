@@ -57,8 +57,7 @@ export const data: FeedNodeData[] = [
       {
         content: 'Copied a garment industry website for job interview',
         stacks: 'AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)',
-        img: sina,
-        link: '/sinaPC/',
+        link: '/fzwjg/dist/',
         linkText: 'Demo link'
       },
     ],

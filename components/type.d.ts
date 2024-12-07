@@ -12,5 +12,5 @@ declare type FeedNodeDataListItem = {
 declare type FeedNodeData = {
   year: string,
   title?: string,
-  list: DemoSite[]
+  list: DemoSite[] | breifItem[]
 }

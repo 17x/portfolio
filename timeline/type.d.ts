@@ -12,28 +12,35 @@ declare global {
   }
 
   declare type DemoSite = {
+    content: string
+    link?: string
+    img?: StaticImageData
     type: 'site'
     media: DemoMediaType
+  } & Demo
+
+  declare type briefItem = {
+    type: 'text'
   } & Demo
 
   declare type DemoFragments = {
     type: 'fragments'
   } & Demo
-}
 
-declare type Demo = {
-  type: DemoTypes
-  /**
-   * @param Set a poster for fast reviewing in the demo list
-   */
-  poster: StaticImageData
-  year: string
-  title?: string
-  list: FeedNodeDataListItem[]
-}
+  declare type Demo = {
+    type: DemoTypes
+    /**
+     * @param Set a poster for fast reviewing in the demo list
+     */
+    poster: StaticImageData
+    year: string
+    title?: string
+    list: FeedNodeDataListItem[]
+  }
 
-declare type DemoMediaType = 's' | 'm' | 'l'
-declare type DemoTypes = 'site' | 'fragments' | 'text'
+  declare type DemoMediaType = 's' | 'm' | 'l'
+  declare type DemoTypes = 'site' | 'fragments' | 'text'
+}
 
 
 // 1. text without link
