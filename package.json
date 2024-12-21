@@ -6,6 +6,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "ip": "^2.0.1",
     "lodash": "^4.17.21",
     "next": "^14.2.5",
     "react": "^18.3.1",

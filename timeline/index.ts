@@ -87,7 +87,7 @@ export const data: TimelineNode[] = [
       },
       {
         type: 'simple',
-        description: 'diving deeper into AngularJs ecosystem, developed',
+        description: 'diving deeper into AngularJs ecosystem, developed a bunch of',
         demo: {
           link: 'https://angularjs.org/',
           linkText: 'Official website',
@@ -125,7 +125,8 @@ export const data: TimelineNode[] = [
           {link: '/wireless/tianjinmobiledownload2016chunjie/', media: 's'},
           {link: '/wireless/tuniu/', media: 's'},
         ],
-        icon: sigbit
+        icon: sigbit,
+        stacks:[]
       },
       {
         type: "simple",
@@ -141,7 +142,7 @@ export const data: TimelineNode[] = [
       },
       {
         type: "simple",
-        description: 'Studied HTML, CSS, Javascript and JQuery on W3schools',
+        description: 'Stopped work and travel, Studied HTML, CSS, Javascript and JQuery on W3schools',
       }
     ],
   },

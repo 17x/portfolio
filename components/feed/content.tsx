@@ -8,7 +8,7 @@ interface Props {
 
 const ContentComp: FC<Props> = ({description, icon, children}) => {
   return <div className={'content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
-    <p className="break-words text-neutral-800 first-letter:text-2xl">{description}</p>
+    <p className="break-words text-neutral-800 first-letter:text-2xl first-letter:mr-[1px]">{description}</p>
     <>
       {children}
     </>
