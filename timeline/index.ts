@@ -5,7 +5,7 @@ import angular from '../assets/angularjs.png'
 import react from '../assets/react.png'
 
 export const data: TimelineNode[] = [
-  {
+ /* {
     year: '2024',
     description: '',
     data: [
@@ -19,7 +19,7 @@ export const data: TimelineNode[] = [
     year: '2023',
     description: '',
     data: [],
-  },
+  },*/
   {
     year: '2022',
     description: '',
@@ -38,16 +38,57 @@ export const data: TimelineNode[] = [
   {
     year: '2019',
     description: '',
-    data: [],
+    data: [
+      {
+        type: 'simple',
+        description: 'Started working for Naozhixin Technologies',
+        demo: {
+          link: 'https://www.akxx.tech/',
+          linkText: 'Company website',
+          media: 'l'
+        },
+        icon: ankai
+      },
+      {
+        type: 'cluster',
+        description: 'Questions for job interview, Canvas only.' +
+          '\n 1: right-click to create a dragable square on Canvas, bring it front by left-click.' +
+          '\n 2: Render six letters on the Canvas; left-click to change the color of the clicked letter, and right-click to change the color of the three letters that the clicked letter belongs to.' +
+          '\n 3: Render an image onto the Canvas and color the nearby pixels that SIMILAR the color of the clicked pixel.'
+        ,
+        list: [
+          {
+            link: '/demos/misc/nzx/q1',
+            media: 'l'
+          },
+          {
+            link: '/demos/misc/nzx/q2',
+            media: 'l'
+          },
+          {
+            link: '/demos/misc/nzx/q3',
+            media: 'l'
+          }
+        ]
+      }
+    ],
   },
   {
     year: '2018',
     description: '',
     data: [
       {
-        type: 'simple',
-        description: 'Getting involved in React',
-        icon: react
+        type: 'cluster',
+        description: 'Learned React, Webpack, and ES6, applied to new projects',
+        icon: react,
+        list: [
+          {
+            link: '/demos/misc/ak-sw-drag-edit-page/public/',
+            linkText: '[Static Page] Drag and drop to generate portrait page',
+            media: 'l'
+          }
+        ],
+        stacks: 'React, Redux, Material-UI, Webpack'
       }
     ],
   },
@@ -55,6 +96,10 @@ export const data: TimelineNode[] = [
     year: '2017',
     description: '',
     data: [
+      {
+        type: 'simple',
+        description: 'Based on the AngularJS ecosystem, developed numerous SPAs that are compatible with encapsulation into apps and browsers.',
+      },
       {
         type: 'simple',
         description: 'Started working for Ankai IT',
@@ -91,7 +136,7 @@ export const data: TimelineNode[] = [
       },
       {
         type: 'cluster',
-        description: 'Continued to sharpen my skills',
+        description: 'Continued to sharpen skills',
         list: [
           {
             link: '/demos/misc/z-copy/',

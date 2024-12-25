@@ -2,8 +2,8 @@ import DOC_URL from "../global";
 
 type Props = { demo: DemoLink }
 const DemoSiteFrame = ({demo: {media, link}}: Props) => {
-  let viewPortWidth = 'w-[1080px]'
-  let viewPortHeight = 'h-[80vh]'
+  let viewPortWidth = 'w-[1280px]'
+  let viewPortHeight = 'h-[90vh]'
   // console.log(media, link)
 
   if (media === 'm') {
