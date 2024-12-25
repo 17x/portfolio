@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "/Users/yahone/projects/17x.github.io/docs/types/**/*.ts"
+//    "/Users/yahone/projects/lucasischow.github.io/docs/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

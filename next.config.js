@@ -14,8 +14,8 @@ const nextConfig = {
   env: {
     DOC_URL: isProd ? '' : `http://${currentIp}:8080/docs`
   },
-  // basePath: path.resolve(__dirname,'../17x.github.io/docs/'),
-  // distDir: path.resolve(__dirname,'../17x.github.io/docs'),
+  // basePath: path.resolve(__dirname,'../lucasischow.github.io/docs/'),
+  // distDir: path.resolve(__dirname,'../lucasischow.github.io/docs'),
   logging: {
     fetches: {
       fullUrl: true,
