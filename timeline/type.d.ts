@@ -38,7 +38,7 @@ declare global {
   }
 
   declare type DemoLink = {
-    link: string
+    link?: string
     linkText?: string
     media: DemoMediaType
     img?: StaticImageData

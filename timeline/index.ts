@@ -3,6 +3,7 @@ import sigbit from '../assets/sigbit.png'
 import ankai from '../assets/ankai.png'
 import angular from '../assets/angularjs.png'
 import react from '../assets/react.png'
+import nzx from '../assets/nzx.png'
 
 export const data: TimelineNode[] = [
  /* {
@@ -43,11 +44,11 @@ export const data: TimelineNode[] = [
         type: 'simple',
         description: 'Started working for Naozhixin Technologies',
         demo: {
-          link: 'https://www.akxx.tech/',
-          linkText: 'Company website',
+          // link: '',
+          // linkText: 'Company website',
           media: 'l'
         },
-        icon: ankai
+        icon: nzx
       },
       {
         type: 'cluster',
