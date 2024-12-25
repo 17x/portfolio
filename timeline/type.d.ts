@@ -1,5 +1,4 @@
 import {StaticImageData} from "next/image";
-import {IntRange} from "type-fest";
 
 declare global {
   declare type TimelineNode = {
@@ -8,20 +7,34 @@ declare global {
     data: TimelineNodeRecord[]
   }
 
-  declare type TimelineNodeRecord = SimpleRecord | SiteRecord | ClusterRecord
+  declare type TimelineNodeRecord = SimpleRecord | ClusterRecord
 
-  declare type SimpleRecord = {
-    type: 'simple',
-    description: string
-    demo: DemoLink
-    icon?: StaticImageData
+  /**
+   * SimpleRecord
+   * Simple text description, with or without a link
+   */
+  declare type SimpleProps = {
+    type: 'simple'
+    demo?: DemoLink
+  }
+  /**
+   * ClusterRecord
+   * A group of samples
+   */
+  declare type ClusterProps = {
+    type: 'cluster'
+    list: DemoLink[]
+    carousel? :boolean
+    stacks?: string
   }
 
-  declare type ClusterRecord = {
-    type: 'cluster',
+  declare type SimpleRecord = GenericRecord<SimpleProps>
+  declare type ClusterRecord = GenericRecord<ClusterProps>
+
+  type GenericRecord<T> = T & {
+    type: string
     description: string
     icon?: StaticImageData
-    list: DemoLink[]
   }
 
   declare type DemoLink = {
@@ -32,5 +45,8 @@ declare global {
     stacks?: string
   }
 
+  /**
+   * Media type is for render demos into different width on the screen
+   */
   declare type DemoMediaType = 's' | 'm' | 'l'
 }

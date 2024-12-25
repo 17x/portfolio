@@ -7,53 +7,53 @@ import react from '../assets/react.png'
 export const data: TimelineNode[] = [
   {
     year: '2024',
-    description: 'hello world3',
-    data: []
+    description: '',
+    data: [
+      {
+        type: 'simple',
+        description: 'Created the page you’re currently visiting.'
+      }
+    ]
   },
   {
     year: '2023',
-    description: 'Very First time',
+    description: '',
     data: [],
   },
   {
     year: '2022',
-    description: 'Very First time',
+    description: '',
     data: [],
   },
   {
     year: '2021',
-    description: 'Very First time',
+    description: '',
     data: [],
   },
   {
     year: '2020',
-    description: 'Very First time',
+    description: '',
     data: [],
   },
   {
     year: '2019',
-    description: 'Very First time',
+    description: '',
     data: [],
   },
   {
     year: '2018',
-    description: 'Very First time',
+    description: '',
     data: [
       {
         type: 'simple',
         description: 'Getting involved in React',
-        demo: {
-          link: 'https://react.dev/learn',
-          linkText: 'Official website',
-          media: 'l'
-        },
         icon: react
       }
     ],
   },
   {
     year: '2017',
-    description: 'Very First time',
+    description: '',
     data: [
       {
         type: 'simple',
@@ -67,11 +67,10 @@ export const data: TimelineNode[] = [
       },
       {
         type: 'simple',
-        media: 's',
-        description: 'Imitated a garment industry website for job interview',
+        description: 'An SPA for job interview',
         demo: {
           stacks: 'AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)',
-          link: '/fzwjg/dist/',
+          link: '/demos/fzwjg/dist/',
           media: 's',
           linkText: 'Demo link'
         },
@@ -87,62 +86,83 @@ export const data: TimelineNode[] = [
       },
       {
         type: 'simple',
-        description: 'diving deeper into AngularJs ecosystem, developed a bunch of',
-        demo: {
-          link: 'https://angularjs.org/',
-          linkText: 'Official website',
-          media: 'l'
-        },
-        icon: angular
-      },
-    ],
-  },
-  {
-    year: '2015',
-    description: 'Very First time',
-    data: [
-      {
-        type: 'simple',
-        description: 'Getting involved in AngularJs',
-        demo: {
-          link: 'https://angularjs.org/',
-          linkText: 'Official website',
-          media: 'l'
-        }
-        ,
+        description: 'diving deeper into AngularJs ecosystem',
         icon: angular
       },
       {
         type: 'cluster',
-        description: `Started working for SIGBIT Computer Co. Ltd. in Guangzhou. Making a bunch of HTML5 pages`,
+        description: 'Continued to sharpen my skills',
         list: [
-          {link: '/wireless/dengmiSubPage/', media: 's'},
-          {link: '/wireless/leshihuiyuanmianfeiling/', media: 's'},
-          {link: '/wireless/LiRongHao/', media: 's'},
-          {link: '/wireless/muqinjie/', media: 's'},
-          {link: '/wireless/olduserhuikui/', media: 's'},
-          {link: '/wireless/qiandaosonghaoli/', media: 's'},
-          {link: '/wireless/tianjinmobiledownload2016chunjie/', media: 's'},
-          {link: '/wireless/tuniu/', media: 's'},
+          {
+            link: '/demos/misc/z-copy/',
+            linkText: 'Copy module',
+            media: 'l'
+          },
+          {
+            link: '/demos/misc/dafeiji/',
+            linkText: 'Tiny game',
+            media: 's'
+          },
+          {
+            link: '/demos/misc/range-comp/',
+            linkText: 'Range module',
+            media: 'l'
+          },
+          {
+            link: '/demos/misc/zAnchorMenuScroll/',
+            linkText: 'Scroll page sample',
+            media: 'l'
+          },
+          {
+            link: '/demos/misc/zSelect/',
+            linkText: 'Selection module',
+            media: 'l'
+          },
+          {
+            link: '/demos/misc/zTouch/',
+            linkText: 'Touch events module(mobile access needed)',
+            media: 'l'
+          },
+        ],
+        // icon: angular
+      }
+    ],
+  },
+  {
+    year: '2015',
+    description: '',
+    data: [
+      {
+        type: 'cluster',
+        description: `Started working as a front-end developer at SIGBIT Computer Co. Ltd. in Guangzhou, Responsible for all front-end-related work.`,
+        list: [
+          {link: '/demos/wireless/dengmiSubPage/', media: 's'},
+          {link: '/demos/wireless/leshihuiyuanmianfeiling/', media: 's'},
+          {link: '/demos/wireless/LiRongHao/', media: 's'},
+          {link: '/demos/wireless/muqinjie/', media: 's'},
+          {link: '/demos/wireless/olduserhuikui/', media: 's'},
+          {link: '/demos/wireless/qiandaosonghaoli/', media: 's'},
+          {link: '/demos/wireless/tianjinmobiledownload2016chunjie/', media: 's'},
+          {link: '/demos/wireless/tuniu/', media: 's'},
         ],
         icon: sigbit,
-        stacks:[]
+        stacks: 'HTML, CSS, JavaScript, JQuery, Zepto, AngularJs, Bootstrap, etc.',
       },
       {
         type: "simple",
-        description: 'An imitation for my first Frontend developer job interview',
+        description: 'An imitated page for my first Frontend developer job interview,',
         demo: {
           stacks: 'HTML, CSS, JavaScript, JQuery',
           // icon: sina,
           media: 'l',
-          link: '/sinaPC/',
+          link: '/demos/sinaPC/',
           linkText: 'demo link'
         },
         icon: sina,
       },
       {
         type: "simple",
-        description: 'Stopped work and travel, Studied HTML, CSS, Javascript and JQuery on W3schools',
+        description: 'Studied HTML, CSS, Javascript and JQuery from internet',
       }
     ],
   },

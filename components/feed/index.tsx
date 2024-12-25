@@ -4,7 +4,7 @@ import DemoSiteFrame from "../demoSiteFrame";
 import SimpleFeed from "./simple";
 import ClusterFeed from "./cluster";
 
-const Index = ({data, sectionTheme}: { data: TimelineNodeRecord, sectionTheme?: string }) => {
+const Index = ({data, sectionTheme}: { data: TimelineNodeRecord[], sectionTheme?: string }) => {
   const [demo, setDemo] = useState<DemoLink>(null)
   const openModal = (e: MouseEvent, demo: DemoLink) => {
     e.preventDefault()
@@ -18,9 +18,9 @@ const Index = ({data, sectionTheme}: { data: TimelineNodeRecord, sectionTheme?: 
           return <div key={idx}
                       className={'min-h-10 items-center flex rounded-md overflow-hidden p-4 border drop-shadow-md border-' + sectionTheme}
           >
-            {item.type === 'simple' && <SimpleFeed data={item} onClick={(e, v:DemoLink) => openModal(e, v)} />}
+            {item.type === 'simple' && <SimpleFeed data={item} onClick={(e, v: DemoLink) => openModal(e, v)} />}
             {/*{item.type === 'site' && <SiteFeed data={item} onClick={(e, v) => openModal(e, v)} />}*/}
-            {item.type === 'cluster' && <ClusterFeed data={item} onClick={(e, v:DemoLink) => openModal(e, v)} />}
+            {item.type === 'cluster' && <ClusterFeed data={item} onClick={(e, v: DemoLink) => openModal(e, v)} />}
           </div>
         })
       }
