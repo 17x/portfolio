@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && ./copy.sh",
+    "build&copy": "next build && ./copy.sh",
     "start": "next start",
     "lint": "next lint"
   },

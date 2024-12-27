@@ -12,7 +12,7 @@ const nextConfig = {
   reactStrictMode: false,
   output: 'export',
   env: {
-    DOC_URL: isProd ? '' : `http://${currentIp}:8080/docs`
+    DOC_URL: isProd ? '' : `http://${currentIp}:8080`
   },
   // basePath: path.resolve(__dirname,'../lucasischow.github.io/docs/'),
   // distDir: path.resolve(__dirname,'../lucasischow.github.io/docs'),
