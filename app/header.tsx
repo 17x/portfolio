@@ -3,7 +3,7 @@ const Header = () => {
     <div className="l"></div>
     <div className="m"></div>
     <div className="r">
-      <a className={'inline-block mr-20px'} href="https://github.com/lucasischow/portfolio"><img
+      <a className={'inline-block mr-20px'} href="https://github.com/lucasischow/lucasischow.github.io"><img
         src="https://img.shields.io/badge/github-portfolio-blue?logo=github" alt="" /></a>
     </div>
   </header>
