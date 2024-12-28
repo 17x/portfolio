@@ -14,6 +14,9 @@ const nextConfig = {
   env: {
     DOC_URL: isProd ? '' : `http://${currentIp}:8080`
   },
+  compiler: {
+    removeConsole: isProd,
+  },
   // basePath: path.resolve(__dirname,'../lucasischow.github.io/docs/'),
   // distDir: path.resolve(__dirname,'../lucasischow.github.io/docs'),
   logging: {
