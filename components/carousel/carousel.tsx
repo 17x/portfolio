@@ -1,5 +1,4 @@
-import {useEffect, useRef, useState} from "react";
-import {transform} from "sucrase";
+import {useEffect, useState} from "react";
 
 type Props = {
   slides: { url: string; alt: string }[];
