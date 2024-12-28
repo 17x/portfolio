@@ -1,3 +1,3 @@
 import {lazy} from "react";
 
-export default lazy(() => import('./Carousel'))
+export default lazy(() => import('./carousel'))

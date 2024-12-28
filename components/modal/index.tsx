@@ -1,3 +1,3 @@
 import {lazy} from "react";
 
-export default lazy(() => import('./Modal'))
+export default lazy(() => import('./modal'))

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Modal from "../modal";
-import DemoSiteFrame from "../demoSiteFrame";
+import DemoSiteFrame from "../demoSiteFrame/demoSiteFrame";
 import SimpleFeed from "./simple";
 import ClusterFeed from "./cluster";
 
@@ -25,9 +25,9 @@ const Index = ({data, sectionTheme}: { data: TimelineNodeRecord[], sectionTheme?
         })
       }
 
-      {demo && <Modal onClose={() => setDemo(null)}>
-        <DemoSiteFrame demo={demo} />
-      </Modal>}
+      {demo &&
+        <DemoSiteFrame demo={demo} onClose={() => setDemo(null)}/>
+      }
     </div>
   )
 };

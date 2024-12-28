@@ -33,7 +33,7 @@ declare global {
 
   type GenericRecord<T> = T & {
     type: string
-    description: string | string[]
+    description: string
     icon?: StaticImageData
     images?: string[]
   }

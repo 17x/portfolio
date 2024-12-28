@@ -14,24 +14,13 @@ const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, description, images}, on
   return (
     <>
       <IconComp icon={icon} />
-      <ContentComp icon={icon} description={description}>
+      <ContentComp icon={icon} description={description} images={images}>
         {
           demo && demo.link &&
           <Link href={demo.link}
                 onClick={(e) => onClick(e, demo)}
                 target={'_blank'}
                 className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{demo.linkText || 'Link'}</Link>
-        }
-        {
-          images &&
-          <Carousel autoplay={false}
-                    autoplaySpeed={100}
-                    slides={images.map(item => {
-                      return {
-                        url: item,
-                        alt: 'item'
-                      }
-                    })} />
         }
         {
           demo && demo.stacks &&
