@@ -6,21 +6,21 @@ import react from '../assets/react.png'
 import nzx from '../assets/nzx.png'
 
 export const data: TimelineNode[] = [
- /* {
-    year: '2024',
-    description: '',
-    data: [
-      {
-        type: 'simple',
-        description: 'Created the page you’re currently visiting.'
-      }
-    ]
-  },
-  {
-    year: '2023',
-    description: '',
-    data: [],
-  },*/
+  /* {
+     year: '2024',
+     description: '',
+     data: [
+       {
+         type: 'simple',
+         description: 'Created the page you’re currently visiting.'
+       }
+     ]
+   },
+   {
+     year: '2023',
+     description: '',
+     data: [],
+   },*/
   {
     year: '2022',
     description: '',
@@ -100,6 +100,7 @@ export const data: TimelineNode[] = [
       {
         type: 'simple',
         description: 'Based on the AngularJS ecosystem, developed numerous SPAs that are compatible with encapsulation into apps and browsers.',
+        images: ['1','1','1','1','1','1'],
       },
       {
         type: 'simple',

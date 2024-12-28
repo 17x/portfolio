@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, {FC} from "react";
 import IconComp from "./Icon";
 import ContentComp from "./content";
+import Carousel from "../Carousel";
 
 interface ModalProps {
   data: SimpleRecord
@@ -9,7 +10,7 @@ interface ModalProps {
   children?: React.ReactNode;
 }
 
-const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, description}, onClick}: ModalProps) => {
+const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, description, images}, onClick}: ModalProps) => {
   return (
     <>
       <IconComp icon={icon} />
@@ -20,6 +21,17 @@ const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, description}, onClick}: 
                 onClick={(e) => onClick(e, demo)}
                 target={'_blank'}
                 className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{demo.linkText || 'Link'}</Link>
+        }
+        {
+          images &&
+          <Carousel autoplay={false}
+                    autoplaySpeed={100}
+                    slides={images.map(item => {
+                      return {
+                        url: item,
+                        alt: 'item'
+                      }
+                    })} />
         }
         {
           demo && demo.stacks &&

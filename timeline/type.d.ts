@@ -24,7 +24,7 @@ declare global {
   declare type ClusterProps = {
     type: 'cluster'
     list: DemoLink[]
-    carousel?: boolean
+    // carousel?: boolean
     stacks?: string
   }
 
@@ -35,6 +35,7 @@ declare global {
     type: string
     description: string | string[]
     icon?: StaticImageData
+    images?: string[]
   }
 
   declare type DemoLink = {
