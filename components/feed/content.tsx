@@ -1,6 +1,7 @@
 import React, {FC, useState} from "react";
 import Carousel from "../carousel";
 import Modal from "../modal";
+import Highlight from "../highlight";
 
 interface Props extends Omit<GenericRecord<{}>, 'type'> {
   children?: React.ReactNode | React.ReactNode[]
@@ -13,6 +14,7 @@ const ContentComp: FC<Props> = ({description, icon, images, children}) => {
     <p className="break-words text-neutral-800 first-letter:text-2xl first-letter:mr-[1px]">
       {decodeURIComponent(description)}
     </p>
+    <Highlight />
     {
       images &&
       <div className={'w-20 h-20'}>

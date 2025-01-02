@@ -1,9 +1,9 @@
-import sina from '../assets/sinaLogo.png'
-import sigbit from '../assets/sigbit.png'
-import ankai from '../assets/ankai.png'
-import angular from '../assets/angularjs.png'
-import react from '../assets/react.png'
-import nzx from '../assets/nzx.png'
+import sina from '../assets/imgs/sinaLogo.png'
+import sigbit from '../assets/imgs/sigbit.png'
+import ankai from '../assets/imgs/ankai.png'
+import angular from '../assets/imgs/angularjs.png'
+import react from '../assets/imgs/react.png'
+import nzx from '../assets/imgs/nzx.png'
 
 export const data: TimelineNode[] = [
   /* {
