@@ -10,14 +10,14 @@ interface ModalProps {
 }
 
 const ClusterFeed: FC<ModalProps> = ({
-                                       data: {icon, list, description, stacks, images},
+                                       data: {icon, list, description, stacks, assets},
                                        onClick,
                                        ...rest
                                      }: ModalProps) => {
   return (
     <>
       <IconComp icon={icon} />
-      <ContentComp icon={icon} description={description} images={images}>
+      <ContentComp icon={icon} description={description} assets={assets}>
         <div className={'mt-1 pt-1 text-sm flex items-start'}>
           <h1 className={'mr-2'}>Links: </h1>
           <div className={'gap-x-2 gap-y-1 text-sm flex flex-wrap items-center'}>

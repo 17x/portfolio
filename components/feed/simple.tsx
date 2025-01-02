@@ -10,11 +10,11 @@ interface ModalProps {
   children?: React.ReactNode;
 }
 
-const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, description, images}, onClick}: ModalProps) => {
+const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, description, assets}, onClick}: ModalProps) => {
   return (
     <>
       <IconComp icon={icon} />
-      <ContentComp icon={icon} description={description} images={images}>
+      <ContentComp icon={icon} description={description} assets={assets}>
         {
           demo && demo.link &&
           <Link href={demo.link}

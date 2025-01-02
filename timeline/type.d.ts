@@ -1,4 +1,5 @@
 import {StaticImageData} from "next/image";
+import {Merge} from "type-fest";
 
 declare global {
   declare type TimelineNode = {
@@ -9,18 +10,11 @@ declare global {
 
   declare type TimelineNodeRecord = SimpleRecord | ClusterRecord
 
-  /**
-   * SimpleRecord
-   * Simple text description, with or without a link
-   */
   declare type SimpleProps = {
     type: 'simple'
-    demo?: DemoLink
+    demo?: Merge<DemoLink, { media?: DemoMediaType }>
   }
-  /**
-   * ClusterRecord
-   * A group of samples
-   */
+
   declare type ClusterProps = {
     type: 'cluster'
     list: DemoLink[]
@@ -28,21 +22,18 @@ declare global {
     stacks?: string
   }
 
-  declare type SimpleRecord = GenericRecord<SimpleProps>
-  declare type ClusterRecord = GenericRecord<ClusterProps>
-
   type GenericRecord<T> = T & {
     type: string
     description: string
     icon?: StaticImageData
-    images?: string[]
+    assets?: DemoAssets[]
   }
 
   declare type DemoLink = {
     link?: string
     linkText?: string
-    media: DemoMediaType
-    img?: StaticImageData
+    media?: DemoMediaType
+    // assets?: DemoAssets[]
     stacks?: string
   }
 
@@ -50,4 +41,13 @@ declare global {
    * Media type is for render demos into different width on the screen
    */
   declare type DemoMediaType = 's' | 'm' | 'l'
+
+  declare type DemoAssets = {
+    type: 'img' | 'code' | 'text' | 'link'
+    data: StaticImageData | string
+  }
+
+  declare type SimpleRecord = GenericRecord<SimpleProps>
+  declare type ClusterRecord = GenericRecord<ClusterProps>
+
 }

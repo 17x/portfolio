@@ -46,8 +46,17 @@ export const data: TimelineNode[] = [
         demo: {
           // link: '',
           // linkText: 'Company website',
-          media: 'l'
+          // media: 'l',
         },
+        assets: [
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+        ],
         icon: nzx
       },
       {
@@ -100,7 +109,20 @@ export const data: TimelineNode[] = [
       {
         type: 'simple',
         description: 'Based on the AngularJS ecosystem, developed numerous SPAs that are compatible with encapsulation into apps and browsers.',
-        images: ['1','1','1','1','1','1'],
+        demo: {
+          // type:'text',
+          // data: '1',
+
+        },
+        assets: [
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+          {type: 'text', data: '1'},
+        ]
       },
       {
         type: 'simple',
