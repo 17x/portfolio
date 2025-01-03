@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Ref} from "react";
 import Carousel from "../carousel";
 import Highlight from "../highlight";
 import {CarouselProps} from "../carousel/carousel";
@@ -7,13 +7,13 @@ import {HighlightProps} from "../highlight/highlight";
 type Props = {
   slides: DemoAssets[]
   onClick?: (i: number) => void
-  carouselProps?: Omit<CarouselProps, 'children'>
-  highlightProps?: HighlightProps
+  carouselConfig?: Omit<CarouselProps, 'children'> & { ref?: Ref<HTMLElement>; }
+  highlightConfig?: HighlightProps
 };
 
-const SlideInFeeds = ({slides, onClick, highlightProps, ...rest}: Props) => {
+const SlideInFeeds = ({slides, onClick, carouselConfig, highlightConfig}: Props) => {
   return (
-    <Carousel {...rest}>
+    <Carousel  {...carouselConfig}>
       {
         slides.map((item, index) => {
           return <div key={index}
@@ -32,7 +32,7 @@ const SlideInFeeds = ({slides, onClick, highlightProps, ...rest}: Props) => {
               <Highlight customWrapStyle={{padding: 0}}
                          customPreStyle={{padding: 0, background: 'none'}}
                          url={item.data as string}
-                         {...highlightProps} />
+                         {...highlightConfig} />
             }
 
           </div>

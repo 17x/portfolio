@@ -88,6 +88,7 @@ const Carousel = ({
 
   return (
     <div
+  // @ts-ignore
       ref={rootRef}
       data-carousel={true}
       data-carousel-id={localId}

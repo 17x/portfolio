@@ -33,10 +33,14 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
       assets && assets.length > 0 &&
       <div className={'relative' + (icon ? ' ml-28' : '')}>
         <SlideInFeeds slides={assets}
-                      style={styles1}
-                      onIndexChange={(i) => {
-                        setCarouselIndex(i)
-                      }} />
+                      carouselConfig={
+                        {
+                          style: styles1,
+                          onIndexChange: (i) => {
+                            setCarouselIndex(i)
+                          }
+                        }
+                      } />
         <button
           onClick={() => setShowFullscreenPreview(carouselIndex)}
           className="absolute right-0 bottom-0 z-20 p-2 rounded-full bg-gray-300 opacity-50 hover:opacity-100 flex items-center justify-center">
@@ -60,9 +64,12 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
       <Modal onClose={() => setShowFullscreenPreview(-1)}>
         <div className={'w-[90vw] h-[90vh]'}>
           <SlideInFeeds slides={assets}
-                        style={styles2}
-                        highlightScrollBar={false}
-                        defaultIndex={showFullscreenPreview} />
+                        carouselConfig={
+                          {
+                            style: styles2,
+                            defaultIndex: showFullscreenPreview
+                          }
+                        } />
         </div>
       </Modal>
     }
