@@ -18,15 +18,17 @@ const Index = ({data, sectionTheme}: { data: TimelineNodeRecord[], sectionTheme?
           return <div key={idx}
                       className={'min-h-10 items-center flex rounded-md overflow-hidden p-4 border drop-shadow-md border-' + sectionTheme}
           >
-            {item.type === 'simple' && <SimpleFeed data={item} onClick={(e, v: DemoLink) => openModal(e, v)} />}
-            {/*{item.type === 'site' && <SiteFeed data={item} onClick={(e, v) => openModal(e, v)} />}*/}
-            {item.type === 'cluster' && <ClusterFeed data={item} onClick={(e, v: DemoLink) => openModal(e, v)} />}
+            <div className={'flex flex-col overflow-hidden'}>
+              {item.type === 'simple' && <SimpleFeed data={item} onClick={(e, v: DemoLink) => openModal(e, v)} />}
+              {/*{item.type === 'site' && <SiteFeed data={item} onClick={(e, v) => openModal(e, v)} />}*/}
+              {item.type === 'cluster' && <ClusterFeed data={item} onClick={(e, v: DemoLink) => openModal(e, v)} />}
+            </div>
           </div>
         })
       }
 
       {demo &&
-        <DemoSiteFrame demo={demo} onClose={() => setDemo(null)}/>
+        <DemoSiteFrame demo={demo} onClose={() => setDemo(null)} />
       }
     </div>
   )

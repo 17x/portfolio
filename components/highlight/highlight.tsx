@@ -8,11 +8,13 @@ SyntaxHighlighter.registerLanguage('javascript', js);
 
 export type HighlightProps = {
   url: string
-  customStyle?: React.CSSProperties
+  className?: string
+  customWrapStyle?: React.CSSProperties
+  customPreStyle?: React.CSSProperties
 };
 
 const defaultStyle = {width: '100%', height: '100%', overflow: 'hidden'}
-const Highlight = ({url, customStyle = {}}: HighlightProps) => {
+const Highlight = ({url, className = '', customPreStyle = {}, customWrapStyle = {}}: HighlightProps) => {
   const [text, setText] = useState<string>(null)
 
   useEffect(() => {
@@ -27,12 +29,13 @@ const Highlight = ({url, customStyle = {}}: HighlightProps) => {
     <div style={
       {
         ...defaultStyle,
-        ...customStyle
+        ...customWrapStyle
       }
     }>
       <SyntaxHighlighter language="javascript"
                          style={tomorrow}
-                         customStyle={{width: '100%', height: '100%', overflow: 'auto'}}>
+                         className={className}
+                         customStyle={{width: '100%', height: '100%', overflow: 'auto', ...customPreStyle}}>
         {text}
       </SyntaxHighlighter>
     </div>

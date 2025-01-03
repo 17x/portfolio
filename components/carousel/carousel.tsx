@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {Ref, useEffect, useRef, useState} from "react";
 
-export type CarouselProps = Omit<React.HTMLProps<HTMLDivElement>, 'className'> & {
+export type CarouselBaseProps = {
   autoplay?: boolean
   autoplaySpeed?: number
   pagination?: boolean
@@ -11,6 +11,7 @@ export type CarouselProps = Omit<React.HTMLProps<HTMLDivElement>, 'className'> &
   onIndexChange?: (index: number) => void;
 }
 
+export type CarouselProps = Omit<React.HTMLProps<HTMLElement>, 'className'> & CarouselBaseProps
 let _id = 0
 const Carousel = ({
                     autoplaySpeed = 1000,
@@ -22,7 +23,7 @@ const Carousel = ({
                     children,
                     ...rest
                   }: CarouselProps) => {
-  const rootRef = useRef<HTMLDivElement>(null);
+  const rootRef = useRef<Ref<HTMLElement>>(null);
   const timerRef1 = useRef<number | null>(null);
   const timerRef2 = useRef<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(defaultIndex)

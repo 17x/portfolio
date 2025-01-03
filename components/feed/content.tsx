@@ -1,25 +1,37 @@
 import React, {FC, useState} from "react";
-import Modal from "../modal";
 import SlideInFeeds from "./slideInFeeds";
+import Modal from "../modal";
+import IconComp from "./Icon";
 
 interface Props extends Omit<GenericRecord<{}>, 'type'> {
   children?: React.ReactNode | React.ReactNode[]
 }
 
-const styles1 = {width: 500, height: 200, boxShadow: '1px 1px 5px 0px #dfdfdf'}
+const styles1 = {width: '100%', height: 200}
 const styles2 = {width: '100%', height: '100%', borderRadius: '3px'};
-const ContentComp: FC<Props> = ({description, icon, assets = [], children}) => {
+
+const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
   const [showFullscreenPreview, setShowFullscreenPreview] = useState<number>(-1)
   const [carouselIndex, setCarouselIndex] = useState(0)
 
-  return <div className={'whitespace-pre-line content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
-    <p className="break-words text-neutral-800 first-letter:text-2xl first-letter:mr-[1px]">
-      {decodeURIComponent(description)}
-    </p>
+  return <>
+    <div className={'min-h-10 items-center flex rounded-md overflow-hidden'}>
+      {icon && <IconComp icon={icon} />}
+
+      <div className={'whitespace-pre-line content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
+        <p className="break-words text-neutral-800 first-letter:text-2xl first-letter:mr-[1px]">
+          {decodeURIComponent(description)}
+        </p>
+
+        <>
+          {children}
+        </>
+      </div>
+    </div>
 
     {
-      assets.length > 0 &&
-      <div className={'relative inline-block'}>
+      assets && assets.length > 0 &&
+      <div className={'relative' + (icon ? ' ml-28' : '')}>
         <SlideInFeeds slides={assets}
                       style={styles1}
                       onIndexChange={(i) => {
@@ -43,22 +55,18 @@ const ContentComp: FC<Props> = ({description, icon, assets = [], children}) => {
       </div>
     }
 
-    <>
-      {children}
-    </>
-
     {
       showFullscreenPreview >= 0 &&
       <Modal onClose={() => setShowFullscreenPreview(-1)}>
         <div className={'w-[90vw] h-[90vh]'}>
           <SlideInFeeds slides={assets}
                         style={styles2}
+                        highlightScrollBar={false}
                         defaultIndex={showFullscreenPreview} />
         </div>
       </Modal>
     }
-
-  </div>
+  </>
 }
 
 export default ContentComp
