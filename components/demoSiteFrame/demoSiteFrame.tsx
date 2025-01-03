@@ -28,6 +28,7 @@ const DemoSiteFrame = ({onClose, demo: {media, link}}: Props) => {
         </div>
         <iframe width={'100%'}
                 height={'100%'}
+                // style={{transform: 'scale(0.7)'}}
                 src={src}></iframe>
       </div>
     </Modal>

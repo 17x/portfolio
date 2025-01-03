@@ -16,7 +16,7 @@ const ClusterFeed: FC<ModalProps> = ({
                                      }: ModalProps) => {
   return (
     <>
-      <IconComp icon={icon} />
+      {icon && <IconComp icon={icon} />}
       <ContentComp icon={icon} description={description} assets={assets}>
         <div className={'mt-1 pt-1 text-sm flex items-start'}>
           <h1 className={'mr-2'}>Links: </h1>

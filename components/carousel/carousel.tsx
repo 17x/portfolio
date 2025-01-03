@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 
-type Props = Omit<React.HTMLProps<HTMLDivElement>, 'className'> & {
+export type CarouselProps = Omit<React.HTMLProps<HTMLDivElement>, 'className'> & {
   autoplay?: boolean
   autoplaySpeed?: number
   pagination?: boolean
@@ -8,6 +8,7 @@ type Props = Omit<React.HTMLProps<HTMLDivElement>, 'className'> & {
   indicator?: boolean
   currentIndicatorIndex?: number
   children: React.ReactNode[];
+  onIndexChange?: (index: number) => void;
 }
 
 let _id = 0
@@ -17,15 +18,15 @@ const Carousel = ({
                     defaultIndex = 0,
                     indicator = true,
                     pagination = true,
+                    onIndexChange,
                     children,
                     ...rest
-                  }: Props) => {
+                  }: CarouselProps) => {
   const rootRef = useRef<HTMLDivElement>(null);
   const timerRef1 = useRef<number | null>(null);
   const timerRef2 = useRef<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(defaultIndex)
   const [focused, setFocused] = useState<boolean>(false)
-  // const [animating, setAnimating] = useState<boolean>(false)
   const [localId, setLocalId] = useState<number>(++_id)
   const firstOne = currentIndex === 0
   const lastOne = currentIndex === children.length - 1
@@ -78,7 +79,7 @@ const Carousel = ({
 
   useEffect(() => {
     updateTimer()
-
+    onIndexChange && onIndexChange(currentIndex)
     window.addEventListener('keydown', handleKeyDown)
 
     return () => window.removeEventListener('keydown', handleKeyDown)
@@ -122,27 +123,40 @@ const Carousel = ({
             onClick={() => updateIndex(currentIndex - 1)}
             style={{
               opacity: firstOne ? 0 : 1,
-              // pointerEvents: firstOne ? 'none' : 'auto',
+              pointerEvents: firstOne ? 'none' : 'auto',
               cursor: firstOne ? 'default' : 'pointer'
             }}
-            className={'z-10 absolute top-0 left-1 h-full items-center flex cursor-pointer'}>
-            <div className="w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent border-r-black
-        opacity-30 hover:opacity-100
-        "></div>
+            className={'w-6 z-10 absolute top-0 left-0 h-full items-center flex justify-center cursor-pointer hover:bg-gradient-to-l from-transparent to-gray-400'}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 text-gray-500 hover:text-gray-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
           </div>
 
           {/* next */}
           <div onClick={() => updateIndex(currentIndex + 1)}
                style={{
                  opacity: lastOne ? 0 : 1,
-                 // pointerEvents: lastOne ? 'none' : 'auto',
+                 pointerEvents: lastOne ? 'none' : 'auto',
                  cursor: lastOne ? 'default' : 'pointer'
                }}
-               className={'z-10 absolute top-0 right-0 h-full items-center flex cursor-pointer'}>
-            <div
-              className="w-0 h-0 border-t-8 border-b-8 border-l-8 border-t-transparent border-b-transparent border-l-black
-        opacity-30 hover:opacity-100
-        "></div>
+               className={'w-6 z-10 absolute top-0 right-0 h-full items-center flex justify-center cursor-pointer hover:bg-gradient-to-r from-transparent to-gray-400'}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 text-gray-500 hover:text-gray-800"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
           </div>
         </>
       }

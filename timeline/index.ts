@@ -1,10 +1,3 @@
-import sina from '../assets/imgs/sinaLogo.png'
-import sigbit from '../assets/imgs/sigbit.png'
-import ankai from '../assets/imgs/ankai.png'
-import angular from '../assets/imgs/angularjs.png'
-import react from '../assets/imgs/react.png'
-import nzx from '../assets/imgs/nzx.png'
-
 export const data: TimelineNode[] = [
   /* {
      year: '2024',
@@ -49,7 +42,7 @@ export const data: TimelineNode[] = [
           // media: 'l',
         },
         assets: [
-          {type: 'text', data: '1'},
+          {type: 'code', data: 'codes/ak-sw-drag-edit-page/webpack.config.js'},
           {type: 'text', data: '2'},
           {type: 'text', data: '3'},
           {type: 'text', data: '4'},
@@ -57,7 +50,7 @@ export const data: TimelineNode[] = [
           {type: 'text', data: '6'},
           {type: 'text', data: '7'},
         ],
-        icon: nzx
+        icon: 'imgs/nzx.jpg'
       },
       {
         type: 'cluster',
@@ -90,7 +83,7 @@ export const data: TimelineNode[] = [
       {
         type: 'cluster',
         description: 'Learned React, Webpack, and ES6, applied to new projects',
-        icon: react,
+        icon: 'imgs/react.png',
         list: [
           {
             link: '/demos/misc/ak-sw-drag-edit-page/public/',
@@ -112,9 +105,7 @@ export const data: TimelineNode[] = [
         demo: {
           // type:'text',
           // data: '1',
-
         },
-/*
         assets: [
           {type: 'text', data: '8'},
           {type: 'text', data: '9'},
@@ -124,7 +115,6 @@ export const data: TimelineNode[] = [
           {type: 'text', data: '13'},
           {type: 'text', data: '14'},
         ]
-*/
       },
       {
         type: 'simple',
@@ -134,7 +124,7 @@ export const data: TimelineNode[] = [
           linkText: 'Company website',
           media: 'l'
         },
-        icon: ankai
+        icon: 'imgs/ankai.png'
       },
       {
         type: 'simple',
@@ -158,7 +148,7 @@ export const data: TimelineNode[] = [
       {
         type: 'simple',
         description: 'diving deeper into AngularJs ecosystem',
-        icon: angular
+        icon: 'imgs/angularjs.png'
       },
       {
         type: 'cluster',
@@ -216,7 +206,7 @@ export const data: TimelineNode[] = [
           {link: '/demos/wireless/tianjinmobiledownload2016chunjie/', media: 's'},
           {link: '/demos/wireless/tuniu/', media: 's'},
         ],
-        icon: sigbit,
+        icon: 'imgs/sigbit.png',
         stacks: 'HTML, CSS, JavaScript, JQuery, Zepto, AngularJs, Bootstrap, etc.',
       },
       {
@@ -224,12 +214,11 @@ export const data: TimelineNode[] = [
         description: 'An imitated page for my first Frontend developer job interview,',
         demo: {
           stacks: 'HTML, CSS, JavaScript, JQuery',
-          // icon: sina,
           media: 'l',
           link: '/demos/sinaPC/',
           linkText: 'demo link'
         },
-        icon: sina,
+        icon: 'imgs/sinaLogo.png',
       },
       {
         type: "simple",

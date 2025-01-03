@@ -38,7 +38,7 @@ const Modal: FC<ModalProps> = ({children, onClose}) => {
       onClick={onClose}
     >
       <button
-        className="absolute block w-auto h-auto top-0 right-3 text-white hover:text-gray-600 text-4xl"
+        className="absolute z-20 block w-auto h-auto top-0 right-3 text-white hover:text-gray-600 text-4xl"
         onClick={onClose}
         aria-label="Close modal"
       >

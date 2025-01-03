@@ -1,4 +1,3 @@
-import {StaticImageData} from "next/image";
 import {Merge} from "type-fest";
 
 declare global {
@@ -25,7 +24,7 @@ declare global {
   type GenericRecord<T> = T & {
     type: string
     description: string
-    icon?: StaticImageData
+    icon?: string
     assets?: DemoAssets[]
   }
 
@@ -44,7 +43,7 @@ declare global {
 
   declare type DemoAssets = {
     type: 'img' | 'code' | 'text' | 'link'
-    data: StaticImageData | string
+    data: string
   }
 
   declare type SimpleRecord = GenericRecord<SimpleProps>

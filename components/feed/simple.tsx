@@ -13,7 +13,7 @@ interface ModalProps {
 const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, description, assets}, onClick}: ModalProps) => {
   return (
     <>
-      <IconComp icon={icon} />
+      {icon && <IconComp icon={icon} />}
       <ContentComp icon={icon} description={description} assets={assets}>
         {
           demo && demo.link &&
