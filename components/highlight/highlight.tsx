@@ -1,7 +1,6 @@
 import {Light as SyntaxHighlighter} from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import tomorrow from 'react-syntax-highlighter/dist/esm/styles/hljs/tomorrow';
-import GetContent from "../../utils/methods/getContent";
 import React, {useEffect, useState} from "react";
 
 SyntaxHighlighter.registerLanguage('javascript', js);
@@ -18,10 +17,17 @@ const Highlight = ({url, className = '', customPreStyle = {}, customWrapStyle = 
   const [text, setText] = useState<string>(null)
 
   useEffect(() => {
-    GetContent(url)
-      .then(res => {
-        setText(res)
-      })
+    const get = async () => {
+      const res = await (await fetch(url)).text()
+      setText(res)
+    }
+
+    get()
+    /*
+        GetContent(url)
+          .then(res => {
+            setText(res)
+          })*/
 
   }, [])
 

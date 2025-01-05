@@ -8,7 +8,8 @@ const Page = () => {
 
   useEffect(() => {
     async function getData() {
-      const {data: nodeList} = await import('../timeline/index')
+      const nodeList: TimelineNode[] = await (await fetch('data/timeline/index.json')).json()
+
       setFeeds(nodeList)
     }
 
