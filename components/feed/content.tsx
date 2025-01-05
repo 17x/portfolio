@@ -36,12 +36,13 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
                       highlightConfig={
                         {
                           className: 'scrollbar-custom',
-                          customWrapStyle: {padding: 0},
-                          customPreStyle: {padding: 0, background: 'none'}
+                          customWrapStyle: {padding: '4px 28px 4px 4px '},
+                          customPreStyle: {padding: 10, background: 'none'},
                         }
                       }
                       carouselConfig={
                         {
+                          autoplay: false,
                           style: styles1,
                           onIndexChange: (i) => {
                             setCarouselIndex(i)
@@ -53,7 +54,7 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
           className="absolute right-0 bottom-0 z-20 p-2 rounded-full bg-gray-300 opacity-50 hover:opacity-100 flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 text-gray-500"
+            className="w-3 h-3 text-gray-500"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -74,7 +75,7 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
                         highlightConfig={
                           {
                             className: 'scrollbar-custom',
-                            customWrapStyle: {padding: '10px 25px 10px 10px '},
+                            customWrapStyle: {padding: '18px 24px 18px 18px '},
                             customPreStyle: {padding: 20, background: 'none'}
                           }
                         }
