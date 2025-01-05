@@ -45,26 +45,6 @@ const data: TimelineNode[] = [
           {
             "type": "text",
             "data": "2"
-          },
-          {
-            "type": "text",
-            "data": "3"
-          },
-          {
-            "type": "text",
-            "data": "4"
-          },
-          {
-            "type": "text",
-            "data": "5"
-          },
-          {
-            "type": "text",
-            "data": "6"
-          },
-          {
-            "type": "text",
-            "data": "7"
           }
         ],
         "icon": "imgs/nzx.jpg"
@@ -130,26 +110,6 @@ const data: TimelineNode[] = [
           {
             "type": "text",
             "data": "9"
-          },
-          {
-            "type": "text",
-            "data": "10"
-          },
-          {
-            "type": "text",
-            "data": "11"
-          },
-          {
-            "type": "text",
-            "data": "12"
-          },
-          {
-            "type": "text",
-            "data": "13"
-          },
-          {
-            "type": "text",
-            "data": "14"
           }
         ]
       },
