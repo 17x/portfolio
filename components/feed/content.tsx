@@ -15,6 +15,9 @@ const ContentComp: FC<Props> = ({description, themeColor = 'gray-300', icon, ass
   const [showFullscreenPreview, setShowFullscreenPreview] = useState<number>(-1)
   const [carouselIndex, setCarouselIndex] = useState(0)
   const showSlider = assets && assets.length > 0
+
+  // const borderColor = themeColor.replace(/[2-9]/, (char) => (Number(char) - 1).toString())
+
   return <>
     <div className={`min-h-10 items-center flex overflow-hidden`}>
       {icon && <IconComp icon={icon} />}

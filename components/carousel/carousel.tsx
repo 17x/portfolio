@@ -50,18 +50,15 @@ const Carousel = ({
     {cursor: 'pointer'}
 
   const updateIndex = (num: number) => {
+    const len = children.length
     let _newIndex: number
 
     if (num < 0) {
-      _newIndex = 0
-    } else if (num >= children.length) {
-      if (loop) {
-        _newIndex = 0
-      } else {
-        _newIndex = children.length - 1
-      }
+      _newIndex = loop ? len - 1 : 0;
+    } else if (num >= len) {
+      _newIndex = loop ? 0 : len - 1;
     } else {
-      _newIndex = num
+      _newIndex = num;
     }
 
     setCurrentIndex(_newIndex)
