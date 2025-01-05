@@ -10,8 +10,9 @@ interface Props extends Omit<GenericRecord<{}>, 'type'> {
 
 const styles1 = {width: '100%', height: 200}
 const styles2 = {width: '100%', height: '100%', borderRadius: '3px'};
+const defaultBorderColorValue = 'gray-300'
 
-const ContentComp: FC<Props> = ({description, themeColor = 'gray-300', icon, assets, children}) => {
+const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorValue, icon, assets, children}) => {
   const [showFullscreenPreview, setShowFullscreenPreview] = useState<number>(-1)
   const [carouselIndex, setCarouselIndex] = useState(0)
   const showSlider = assets && assets.length > 0
@@ -35,13 +36,12 @@ const ContentComp: FC<Props> = ({description, themeColor = 'gray-300', icon, ass
 
     {
       showSlider &&
-      <div
-        className={`pt-8 mt-4 relative ${icon ? 'ml-28' : ''} border-t-[1px] border-${themeColor}`}>
+      <div className={`pt-8 mt-4 relative ${icon ? 'ml-28' : ''} border-t-[1px] border-${defaultBorderColorValue}`}>
         <SlideInFeeds slides={assets}
                       highlightConfig={
                         {
-                          className: 'scrollbar-custom',
-                          customWrapStyle: {padding: '4px 28px 4px 4px '},
+                          preClassName: 'scrollbar-custom ',
+                          customWrapStyle: {height: 180, padding: '4px 28px 4px 4px '},
                           customPreStyle: {padding: 0, background: 'none'},
                         }
                       }
@@ -56,7 +56,7 @@ const ContentComp: FC<Props> = ({description, themeColor = 'gray-300', icon, ass
                       } />
         <button
           onClick={() => setShowFullscreenPreview(carouselIndex)}
-          className="absolute right-0 bottom-0 z-20 p-2 rounded-full bg-gray-300 opacity-50 hover:opacity-100 flex items-center justify-center">
+          className={`absolute right-0 bottom-0 z-20 p-2 rounded-full bg-${themeColor} opacity-20 hover:opacity-100 flex items-center justify-center`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-3 h-3 text-gray-500"
@@ -79,14 +79,15 @@ const ContentComp: FC<Props> = ({description, themeColor = 'gray-300', icon, ass
           <SlideInFeeds slides={assets}
                         highlightConfig={
                           {
-                            className: 'scrollbar-custom',
-                            customWrapStyle: {padding: '18px 24px 18px 18px '},
+                            preClassName: 'scrollbar-custom ',
+                            customWrapStyle: {padding: '18px 24px'},
                             customPreStyle: {padding: 20, background: 'none'}
                           }
                         }
                         carouselConfig={
                           {
                             autoplay: false,
+                            indicator: false,
                             style: styles2,
                             defaultIndex: showFullscreenPreview
                           }

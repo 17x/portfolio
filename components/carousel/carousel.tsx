@@ -32,8 +32,10 @@ const Carousel = ({
   const [focused, setFocused] = useState<boolean>(false)
   const [paused, setPaused] = useState<boolean>(false)
   const [localId, setLocalId] = useState<number>(++_id)
+  // Children length
+  const CLEN = children.length
   const firstOne = currentIndex === 0
-  const lastOne = currentIndex === children.length - 1
+  const lastOne = currentIndex === CLEN - 1
   const prevStyle: React.CSSProperties = !loop ?
     {
       opacity: (firstOne) ? 0 : 1,
@@ -50,7 +52,7 @@ const Carousel = ({
     {cursor: 'pointer'}
 
   const updateIndex = (num: number) => {
-    const len = children.length
+    const len = CLEN
     let _newIndex: number
 
     if (num < 0) {
@@ -130,8 +132,8 @@ const Carousel = ({
         className={`relative h-full flex`}
         style={{
           transition: 'transform 0.3s ease',
-          transform: `translateX(${(-100 / children.length) * currentIndex}%)`,
-          width: children.length * 100 + '%'
+          transform: `translateX(${(-100 / CLEN) * currentIndex}%)`,
+          width: CLEN * 100 + '%'
         }}
       >
         {children}
@@ -139,8 +141,22 @@ const Carousel = ({
 
       {
         indicator &&
-        <div className={'z-10 absolute bottom-0 w-full h-5 items-center flex'}>
-          <div className={'w-full h-5 flex'}></div>
+        <div className={'z-10 absolute bottom-0 w-full items-center flex'}>
+          <div className={'w-full flex gap-1 justify-center'}>
+            {
+              Array.from({length: CLEN}, (_, i) => (
+                <div
+                  key={i}
+                  onClick={() => {
+                    updateIndex(i)
+                  }}
+                  className={`
+                  w-2 h-2 rounded-full hover:bg-blue-300 cursor-pointer
+                  ${i === currentIndex ? 'bg-blue-500' : 'bg-gray-400'}`}
+                ></div>)
+              )
+            }
+          </div>
         </div>}
 
       {
@@ -150,7 +166,7 @@ const Carousel = ({
           <div
             onClick={() => updateIndex(currentIndex - 1)}
             style={prevStyle}
-            className={'w-6 z-10 absolute top-0 left-0 h-full items-center flex justify-center cursor-pointer hover:bg-gradient-to-l from-transparent to-gray-400'}>
+            className={'w-6 z-10 absolute top-0 left-0 h-full items-center flex justify-center cursor-pointer hover:bg-gradient-to-l from-transparent to-gray-200'}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 text-gray-500 hover:text-gray-600"
@@ -166,7 +182,7 @@ const Carousel = ({
           {/* next */}
           <div onClick={() => updateIndex(currentIndex + 1)}
                style={nextStyle}
-               className={'w-6 z-10 absolute top-0 right-0 h-full items-center flex justify-center cursor-pointer hover:bg-gradient-to-r from-transparent to-gray-400'}>
+               className={'w-6 z-10 absolute top-0 right-0 h-full items-center flex justify-center cursor-pointer hover:bg-gradient-to-r from-transparent to-gray-200'}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 text-gray-500 hover:text-gray-800"
