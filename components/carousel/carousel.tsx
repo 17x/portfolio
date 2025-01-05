@@ -68,7 +68,7 @@ const Carousel = ({
   const updateTimer = () => {
     if (autoplay) {
       let animating = false
-      console.log(paused)
+
       clearInterval(timerRef1.current)
       clearTimeout(timerRef2.current)
 
