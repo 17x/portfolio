@@ -34,6 +34,20 @@ const Carousel = ({
   const [localId, setLocalId] = useState<number>(++_id)
   const firstOne = currentIndex === 0
   const lastOne = currentIndex === children.length - 1
+  const prevStyle: React.CSSProperties = !loop ?
+    {
+      opacity: (firstOne) ? 0 : 1,
+      pointerEvents: firstOne ? 'none' : 'auto',
+      cursor: firstOne ? 'default' : 'pointer'
+    } :
+    {cursor: 'pointer'}
+  const nextStyle: React.CSSProperties = !loop ?
+    {
+      opacity: lastOne ? 0 : 1,
+      pointerEvents: lastOne ? 'none' : 'auto',
+      cursor: lastOne ? 'default' : 'pointer'
+    } :
+    {cursor: 'pointer'}
 
   const updateIndex = (num: number) => {
     let _newIndex: number
@@ -138,11 +152,7 @@ const Carousel = ({
           {/* prev */}
           <div
             onClick={() => updateIndex(currentIndex - 1)}
-            style={{
-              opacity: firstOne ? 0 : 1,
-              pointerEvents: firstOne ? 'none' : 'auto',
-              cursor: firstOne ? 'default' : 'pointer'
-            }}
+            style={prevStyle}
             className={'w-6 z-10 absolute top-0 left-0 h-full items-center flex justify-center cursor-pointer hover:bg-gradient-to-l from-transparent to-gray-400'}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -158,11 +168,7 @@ const Carousel = ({
 
           {/* next */}
           <div onClick={() => updateIndex(currentIndex + 1)}
-               style={{
-                 opacity: lastOne ? 0 : 1,
-                 pointerEvents: lastOne ? 'none' : 'auto',
-                 cursor: lastOne ? 'default' : 'pointer'
-               }}
+               style={nextStyle}
                className={'w-6 z-10 absolute top-0 right-0 h-full items-center flex justify-center cursor-pointer hover:bg-gradient-to-r from-transparent to-gray-400'}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

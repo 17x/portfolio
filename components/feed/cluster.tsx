@@ -9,16 +9,18 @@ interface ModalProps {
   data: ClusterRecord
   onClick?: (e: any, v: DemoLink) => void;
   children?: React.ReactNode;
+  themeColor?: string
 }
 
 const ClusterFeed: FC<ModalProps> = ({
                                        data: {icon, list, description, stacks, assets},
+                                       themeColor,
                                        onClick,
                                        ...rest
                                      }: ModalProps) => {
 
   return (
-    <ContentComp icon={icon} description={description}>
+    <ContentComp themeColor={themeColor} icon={icon} description={description}>
       <div className={'mt-1 pt-1 text-sm flex items-start'}>
         <h1 className={'mr-2'}>Links: </h1>
         <div className={'gap-x-2 gap-y-1 text-sm flex flex-wrap items-center'}>

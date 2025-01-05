@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, {FC} from "react";
-import IconComp from "./Icon";
+// import IconComp from "./Icon";
 import ContentComp from "./content";
 
 // import Carousel from "../carousel";
@@ -9,11 +9,12 @@ interface ModalProps {
   data: SimpleRecord
   onClick?: (e: any, v: DemoLink) => void;
   children?: React.ReactNode;
+  themeColor?: string
 }
 
-const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, assets, description}, onClick}: ModalProps) => {
+const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, assets, description}, onClick, themeColor}: ModalProps) => {
   return (
-    <ContentComp icon={icon} assets={assets} description={description}>
+    <ContentComp themeColor={themeColor} icon={icon} assets={assets} description={description}>
       {
         demo && demo.link &&
         <Link href={demo.link}

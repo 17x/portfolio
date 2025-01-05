@@ -5,17 +5,18 @@ import IconComp from "./Icon";
 
 interface Props extends Omit<GenericRecord<{}>, 'type'> {
   children?: React.ReactNode | React.ReactNode[]
+  themeColor?: string
 }
 
 const styles1 = {width: '100%', height: 200}
 const styles2 = {width: '100%', height: '100%', borderRadius: '3px'};
 
-const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
+const ContentComp: FC<Props> = ({description, themeColor = 'gray-300', icon, assets, children}) => {
   const [showFullscreenPreview, setShowFullscreenPreview] = useState<number>(-1)
   const [carouselIndex, setCarouselIndex] = useState(0)
-
+  const showSlider = assets && assets.length > 0
   return <>
-    <div className={'min-h-10 items-center flex overflow-hidden'}>
+    <div className={`min-h-10 items-center flex overflow-hidden`}>
       {icon && <IconComp icon={icon} />}
 
       <div className={'whitespace-pre-line content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
@@ -30,8 +31,9 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
     </div>
 
     {
-      assets && assets.length > 0 &&
-      <div className={'border-t-2 pt-4 mt-2 relative' + (icon ? ' ml-28' : '')}>
+      showSlider &&
+      <div
+        className={`pt-8 mt-4 relative ${icon ? 'ml-28' : ''} border-t-[1px] border-${themeColor}`}>
         <SlideInFeeds slides={assets}
                       highlightConfig={
                         {
