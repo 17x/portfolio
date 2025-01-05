@@ -28,6 +28,7 @@ const Carousel = ({
   const timerRef2 = useRef<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(defaultIndex)
   const [focused, setFocused] = useState<boolean>(false)
+  const [paused, setPaused] = useState<boolean>(false)
   const [localId, setLocalId] = useState<number>(++_id)
   const firstOne = currentIndex === 0
   const lastOne = currentIndex === children.length - 1
@@ -66,7 +67,7 @@ const Carousel = ({
       clearTimeout(timerRef2.current)
 
       timerRef1.current = setInterval(() => {
-        if (animating) return
+        if (animating || paused) return
 
         animating = true
         updateIndex(currentIndex + 1)
@@ -83,7 +84,10 @@ const Carousel = ({
     onIndexChange && onIndexChange(currentIndex)
     window.addEventListener('keydown', handleKeyDown)
 
-    return () => window.removeEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
   }, [currentIndex, focused])
 
   return (
@@ -91,6 +95,12 @@ const Carousel = ({
       ref={rootRef}
       data-carousel={true}
       data-carousel-id={localId}
+      onMouseEnter={() => {
+        setPaused(true)
+      }}
+      onMouseLeave={() => {
+        setPaused(false)
+      }}
       onMouseDown={() => {
         setFocused(true)
       }}

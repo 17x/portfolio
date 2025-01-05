@@ -35,7 +35,7 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
         <SlideInFeeds slides={assets}
                       highlightConfig={
                         {
-                          className:'scrollbar-custom',
+                          className: 'scrollbar-custom',
                           customWrapStyle: {padding: 0},
                           customPreStyle: {padding: 0, background: 'none'}
                         }
@@ -73,8 +73,8 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
           <SlideInFeeds slides={assets}
                         highlightConfig={
                           {
-                            className:'scrollbar-custom',
-                            customWrapStyle: {padding: 10},
+                            className: 'scrollbar-custom',
+                            customWrapStyle: {padding: '10px 25px 10px 10px '},
                             customPreStyle: {padding: 20, background: 'none'}
                           }
                         }
