@@ -3,12 +3,13 @@ import Carousel from "../carousel";
 import Highlight from "../highlight";
 import {CarouselProps} from "../carousel/carousel";
 import {HighlightProps} from "../highlight/highlight";
+import Image from "../image";
 
 type Props = {
   slides: DemoAssets[]
   onClick?: (i: number) => void
   carouselConfig?: Omit<CarouselProps, 'ref' | 'children'>
-  highlightConfig?: Omit<HighlightProps,'url'>
+  highlightConfig?: Omit<HighlightProps, 'url'>
 };
 
 const SlideInFeeds = ({slides, onClick, carouselConfig, highlightConfig}: Props) => {
@@ -25,7 +26,10 @@ const SlideInFeeds = ({slides, onClick, carouselConfig, highlightConfig}: Props)
             }
             {
               item.type === 'img' &&
-              <img src={item.data as string} alt="" />
+              <Image lazy
+                     className={'inline-block object-contain max-h-full'}
+                     src={item.data}
+                     alt="" />
             }
             {
               item.type === 'code' &&

@@ -18,7 +18,7 @@ const Index = ({data, sectionTheme}: { data: TimelineNodeRecord[], sectionTheme?
           return <div key={idx}
                       className={'min-h-10 items-center flex rounded-md overflow-hidden p-4 border drop-shadow-md border-' + sectionTheme}
           >
-            <div className={'flex flex-col overflow-hidden'}>
+            <div className={'flex flex-col overflow-hidden w-full'}>
               {item.type === 'simple' && <SimpleFeed themeColor={sectionTheme} data={item} onClick={(e, v: DemoLink) => openModal(e, v)} />}
               {/*{item.type === 'site' && <SiteFeed data={item} onClick={(e, v) => openModal(e, v)} />}*/}
               {item.type === 'cluster' && <ClusterFeed themeColor={sectionTheme} data={item} onClick={(e, v: DemoLink) => openModal(e, v)} />}

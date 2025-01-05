@@ -18,15 +18,19 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
   const showSlider = assets && assets.length > 0
 
   // const borderColor = themeColor.replace(/[2-9]/, (char) => (Number(char) - 1).toString())
-
+  const _f = description instanceof Array
   return <>
     <div className={`min-h-10 items-center flex overflow-hidden`}>
       {icon && <IconComp icon={icon} />}
 
       <div className={'whitespace-pre-line content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
-        <p className="break-words text-neutral-800 first-letter:text-2xl first-letter:mr-[1px]">
-          {decodeURIComponent(description)}
-        </p>
+        <div className={`break-words text-neutral-800 first-letter:text-2xl first-letter:mr-[1px]`}>
+          {
+            _f
+              ? description.map((item, i) => <p key={i}>{decodeURIComponent(item)}</p>)
+              : <span>{decodeURIComponent(description)}</span>
+          }
+        </div>
 
         <>
           {children}
@@ -36,7 +40,7 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
 
     {
       showSlider &&
-      <div className={`pt-6 mt-4 relative ${icon ? 'ml-28' : ''} border-t-[1px] border-${defaultBorderColorValue}`}>
+      <div className={`pt-6 mt-4 relative  border-t-[1px] border-${defaultBorderColorValue}`}>
         <SlideInFeeds slides={assets}
                       highlightConfig={
                         {

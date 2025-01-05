@@ -51,7 +51,12 @@ const data: TimelineNode[] = [
       },
       {
         "type": "cluster",
-        "description": "\n 1: right-click to create a dragable square on Canvas, bring it front by left-click.\n 2: Render six letters on the Canvas; left-click to change the color of the clicked letter, and right-click to change the color of the three letters that the clicked letter belongs to.\n 3: Render an image onto the Canvas and color the nearby pixels that SIMILAR the color of the clicked pixel.",
+        "description": [
+          "Interview questions",
+          " 1: right-click to create a dragable square on Canvas, bring it front by left-click.",
+          " 2: Render six letters on the Canvas; left-click to change the color of the clicked letter, and right-click to change the color of the three letters that the clicked letter belongs to.",
+          " 3: Render an image onto the Canvas and color the nearby pixels that SIMILAR the color of the clicked pixel."
+        ],
         "list": [
           {
             "link": "/demos/misc/nzx/q1",
@@ -64,6 +69,12 @@ const data: TimelineNode[] = [
           {
             "link": "/demos/misc/nzx/q3",
             "media": "l"
+          }
+        ],
+        assets: [
+          {
+            "type": "img",
+            "data": "imgs/2019-01.gif"
           }
         ]
       }
@@ -80,7 +91,19 @@ const data: TimelineNode[] = [
         assets: [
           {
             "type": "code",
+            "data": "codes/ak-sw-drag-edit-page/package.json"
+          },
+          {
+            "type": "code",
             "data": "codes/ak-sw-drag-edit-page/webpack.config.js"
+          },
+          {
+            "type": "code",
+            "data": "codes/ak-sw-drag-edit-page/index.js"
+          },
+          {
+            "type": "code",
+            "data": "codes/ak-sw-drag-edit-page/reducer.js"
           },
         ],
         "list": [
@@ -105,12 +128,21 @@ const data: TimelineNode[] = [
         "assets": [
           {
             "type": "code",
-            "data": "codes/ak-sw-drag-edit-page/webpack.config.js"
+            "data": "codes/ak-sw-tg/package.json"
           },
           {
-            "type": "text",
-            "data": "9"
-          }
+            "type": "code",
+            "data": "codes/ak-sw-tg/gulpfile-http.js"
+          },
+          {
+            "type": "code",
+            "data": "codes/ak-sw-tg/mainCtrl.js"
+          },
+          {
+            "type": "code",
+            "data": "codes/ak-sw-tg/route.js"
+          },
+
         ]
       },
       {
