@@ -48,7 +48,10 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
                       carouselConfig={
                         {
                           // autoplay: false,
-                          style: styles1,
+                          style: {
+                            width: '100%',
+                            height: assets.length > 1 ? 200 : 'auto'
+                          },
                           onIndexChange: (i) => {
                             setCarouselIndex(i)
                           }

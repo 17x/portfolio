@@ -51,7 +51,7 @@ const Carousel = ({
     } :
     {cursor: 'pointer'}
 
-  const showNavigation = navigator && CLEN > 1
+  const showIndicator = indicator && CLEN > 1
   const showPagination = pagination && CLEN > 1
 
   const updateIndex = (num: number) => {
@@ -143,7 +143,7 @@ const Carousel = ({
       </div>
 
       {
-        showNavigation &&
+        showIndicator &&
         <div className={'z-10 absolute bottom-0 w-full items-center flex'}>
           <div className={'w-full flex gap-1 justify-center'}>
             {
