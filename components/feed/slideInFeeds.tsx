@@ -7,8 +7,8 @@ import {HighlightProps} from "../highlight/highlight";
 type Props = {
   slides: DemoAssets[]
   onClick?: (i: number) => void
-  carouselConfig?: Omit<CarouselProps, 'children'> & { ref?: Ref<HTMLElement>; }
-  highlightConfig?: HighlightProps
+  carouselConfig?: Omit<CarouselProps, 'ref' | 'children'>
+  highlightConfig?: Omit<HighlightProps,'url'>
 };
 
 const SlideInFeeds = ({slides, onClick, carouselConfig, highlightConfig}: Props) => {
@@ -29,9 +29,7 @@ const SlideInFeeds = ({slides, onClick, carouselConfig, highlightConfig}: Props)
             }
             {
               item.type === 'code' &&
-              <Highlight customWrapStyle={{padding: 0}}
-                         customPreStyle={{padding: 0, background: 'none'}}
-                         url={item.data as string}
+              <Highlight url={item.data as string}
                          {...highlightConfig} />
             }
 

@@ -1,4 +1,4 @@
-import React, {Ref, useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 export type CarouselBaseProps = {
   autoplay?: boolean
@@ -11,10 +11,10 @@ export type CarouselBaseProps = {
   onIndexChange?: (index: number) => void;
 }
 
-export type CarouselProps = Omit<React.HTMLProps<HTMLElement>, 'className'> & CarouselBaseProps
+export type CarouselProps = Omit<React.HTMLProps<HTMLDivElement>, 'className'> & CarouselBaseProps
 let _id = 0
 const Carousel = ({
-                    autoplaySpeed = 1000,
+                    autoplaySpeed = 3000,
                     autoplay = true,
                     defaultIndex = 0,
                     indicator = true,
@@ -23,7 +23,7 @@ const Carousel = ({
                     children,
                     ...rest
                   }: CarouselProps) => {
-  const rootRef = useRef<Ref<HTMLElement>>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
   const timerRef1 = useRef<number | null>(null);
   const timerRef2 = useRef<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(defaultIndex)
@@ -88,7 +88,6 @@ const Carousel = ({
 
   return (
     <div
-  // @ts-ignore
       ref={rootRef}
       data-carousel={true}
       data-carousel-id={localId}

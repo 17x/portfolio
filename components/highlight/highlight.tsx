@@ -2,7 +2,7 @@ import {Light as SyntaxHighlighter} from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import tomorrow from 'react-syntax-highlighter/dist/esm/styles/hljs/tomorrow';
 import GetContent from "../../utils/methods/getContent";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 

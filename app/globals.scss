@@ -8,16 +8,27 @@
   }
 
   .scrollbar-custom::-webkit-scrollbar {
+    padding-top: 5px;
     width: 4px;
     height: 4px;
   }
 
   .scrollbar-custom::-webkit-scrollbar-thumb {
+    display: none;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 4px;
   }
 
   .scrollbar-custom::-webkit-scrollbar-track {
+    display: none;
     background: rgba(0, 0, 0, 0.1);
+    padding-top: 5px;
+  }
+
+  .scrollbar-custom:hover::-webkit-scrollbar-track {
+    display: block;
+  }
+  .scrollbar-custom:hover::-webkit-scrollbar-thumb {
+    display: block;
   }
 }

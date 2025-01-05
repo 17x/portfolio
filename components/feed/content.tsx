@@ -33,6 +33,13 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
       assets && assets.length > 0 &&
       <div className={'relative' + (icon ? ' ml-28' : '')}>
         <SlideInFeeds slides={assets}
+                      highlightConfig={
+                        {
+                          className:'scrollbar-custom',
+                          customWrapStyle: {padding: 0},
+                          customPreStyle: {padding: 0, background: 'none'}
+                        }
+                      }
                       carouselConfig={
                         {
                           style: styles1,
@@ -64,8 +71,16 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
       <Modal onClose={() => setShowFullscreenPreview(-1)}>
         <div className={'w-[90vw] h-[90vh]'}>
           <SlideInFeeds slides={assets}
+                        highlightConfig={
+                          {
+                            className:'scrollbar-custom',
+                            customWrapStyle: {padding: 10},
+                            customPreStyle: {padding: 20, background: 'none'}
+                          }
+                        }
                         carouselConfig={
                           {
+                            autoplay: false,
                             style: styles2,
                             defaultIndex: showFullscreenPreview
                           }

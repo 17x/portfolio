@@ -1,6 +1,6 @@
 import Link from "next/link";
-import React, {FC, useState} from "react";
-import IconComp from "./Icon";
+import React, {FC} from "react";
+// import IconComp from "./Icon";
 import ContentComp from "./content";
 // import SlideInFeeds from "./slideInFeeds";
 // import Modal from "../modal";
