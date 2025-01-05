@@ -25,7 +25,7 @@ const TimelineNodes = ({feeds}: { feeds: TimelineNode[] }) => {
   return <div className={'relative'}>
     <div>
       {/*Placeholder*/}
-      <div className={'flex items-start relative h-48'}>
+      <div className={'flex items-start relative h-48'} data-node-placehoder={true}>
         <div className={'absolute h-full -left-1 flex'}>
           <div className={'w-1 h-full ' + createGradient([COLORS[COLORS.length - 1], colors[0]])}></div>
         </div>

@@ -3,6 +3,7 @@ import React, {useEffect, useRef, useState} from "react";
 export type CarouselBaseProps = {
   autoplay?: boolean
   autoplaySpeed?: number
+  loop?: boolean
   pagination?: boolean
   defaultIndex?: number
   indicator?: boolean
@@ -16,6 +17,7 @@ let _id = 0
 const Carousel = ({
                     autoplaySpeed = 5000,
                     autoplay = true,
+                    loop = true,
                     defaultIndex = 0,
                     indicator = true,
                     pagination = true,
@@ -39,7 +41,11 @@ const Carousel = ({
     if (num < 0) {
       _newIndex = 0
     } else if (num >= children.length) {
-      _newIndex = children.length - 1
+      if (loop) {
+        _newIndex = 0
+      } else {
+        _newIndex = children.length - 1
+      }
     } else {
       _newIndex = num
     }
@@ -62,15 +68,15 @@ const Carousel = ({
   const updateTimer = () => {
     if (autoplay) {
       let animating = false
-
+      console.log(paused)
       clearInterval(timerRef1.current)
       clearTimeout(timerRef2.current)
 
       timerRef1.current = setInterval(() => {
         if (animating || paused) return
 
-        animating = true
         updateIndex(currentIndex + 1)
+        animating = true
         timerRef2.current = setTimeout(() => {
           animating = false
         }, autoplaySpeed) as unknown as number
@@ -88,14 +94,14 @@ const Carousel = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [currentIndex, focused])
+  }, [currentIndex, focused, paused])
 
   return (
     <div
       ref={rootRef}
       data-carousel={true}
       data-carousel-id={localId}
-      onMouseEnter={() => {
+      onMouseOver={() => {
         setPaused(true)
       }}
       onMouseLeave={() => {

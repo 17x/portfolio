@@ -15,7 +15,7 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
   const [carouselIndex, setCarouselIndex] = useState(0)
 
   return <>
-    <div className={'min-h-10 items-center flex rounded-md overflow-hidden'}>
+    <div className={'min-h-10 items-center flex overflow-hidden'}>
       {icon && <IconComp icon={icon} />}
 
       <div className={'whitespace-pre-line content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
@@ -31,18 +31,18 @@ const ContentComp: FC<Props> = ({description, icon, assets, children}) => {
 
     {
       assets && assets.length > 0 &&
-      <div className={'relative' + (icon ? ' ml-28' : '')}>
+      <div className={'border-t-2 pt-4 mt-2 relative' + (icon ? ' ml-28' : '')}>
         <SlideInFeeds slides={assets}
                       highlightConfig={
                         {
                           className: 'scrollbar-custom',
                           customWrapStyle: {padding: '4px 28px 4px 4px '},
-                          customPreStyle: {padding: 10, background: 'none'},
+                          customPreStyle: {padding: 0, background: 'none'},
                         }
                       }
                       carouselConfig={
                         {
-                          autoplay: false,
+                          // autoplay: false,
                           style: styles1,
                           onIndexChange: (i) => {
                             setCarouselIndex(i)
