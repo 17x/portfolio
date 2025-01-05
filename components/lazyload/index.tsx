@@ -1,3 +1,3 @@
 import {lazy} from "react";
 
-export default lazy(() => import('./lazyload'));
+export default lazy(() => import('./lazyLoad'));

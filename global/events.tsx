@@ -1,3 +1,4 @@
+'use client'
 import Bus from "./bus";
 
 window.addEventListener('scroll', function (event) {

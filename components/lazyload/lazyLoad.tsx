@@ -23,7 +23,7 @@ const LazyLoad: React.FC<Props> = ({children}) => {
   }, [])
 
   return (
-    loaded ? children : <i ref={iRef} style={{width: 0, height: 0}} />
+    loaded ? children : <b ref={iRef} style={{width: 0, height: 0}} />
   )
 };
 
