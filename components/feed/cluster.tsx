@@ -20,7 +20,7 @@ const ClusterFeed: FC<ModalProps> = ({
                                      }: ModalProps) => {
 
   return (
-    <ContentComp themeColor={themeColor} icon={icon} description={description}>
+    <ContentComp themeColor={themeColor} assets={assets} icon={icon} description={description}>
       <div className={'mt-1 pt-1 text-sm flex items-start'}>
         <h1 className={'mr-2'}>Links: </h1>
         <div className={'gap-x-2 gap-y-1 text-sm flex flex-wrap items-center'}>

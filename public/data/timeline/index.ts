@@ -97,6 +97,12 @@ const data: TimelineNode[] = [
         "type": "cluster",
         "description": "Learned React, Webpack, and ES6, applied to new projects",
         "icon": "imgs/react.png",
+        assets: [
+          {
+            "type": "code",
+            "data": "codes/ak-sw-drag-edit-page/webpack.config.js"
+          },
+        ],
         "list": [
           {
             "link": "/demos/misc/ak-sw-drag-edit-page/public/",

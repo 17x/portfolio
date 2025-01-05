@@ -51,6 +51,9 @@ const Carousel = ({
     } :
     {cursor: 'pointer'}
 
+  const showNavigation = navigator && CLEN > 1
+  const showPagination = pagination && CLEN > 1
+
   const updateIndex = (num: number) => {
     const len = CLEN
     let _newIndex: number
@@ -86,7 +89,7 @@ const Carousel = ({
       clearTimeout(timerRef2.current)
 
       timerRef1.current = setInterval(() => {
-        if (animating || paused) return
+        if (animating || paused || CLEN <= 1) return
 
         updateIndex(currentIndex + 1)
         animating = true
@@ -140,7 +143,7 @@ const Carousel = ({
       </div>
 
       {
-        indicator &&
+        showNavigation &&
         <div className={'z-10 absolute bottom-0 w-full items-center flex'}>
           <div className={'w-full flex gap-1 justify-center'}>
             {
@@ -160,7 +163,7 @@ const Carousel = ({
         </div>}
 
       {
-        pagination &&
+        showPagination &&
         <>
           {/* prev */}
           <div
