@@ -36,13 +36,13 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
 
     {
       showSlider &&
-      <div className={`pt-8 mt-4 relative ${icon ? 'ml-28' : ''} border-t-[1px] border-${defaultBorderColorValue}`}>
+      <div className={`pt-6 mt-4 relative ${icon ? 'ml-28' : ''} border-t-[1px] border-${defaultBorderColorValue}`}>
         <SlideInFeeds slides={assets}
                       highlightConfig={
                         {
                           preClassName: 'scrollbar-custom ',
-                          customWrapStyle: {height: 180, padding: '4px 28px 4px 4px '},
-                          customPreStyle: {padding: 0, background: 'none'},
+                          customWrapStyle: {height: 180, padding: '0 28px'},
+                          customPreStyle: {padding: 10, background: 'none', boxShadow: 'inset 0 0 3px 1px #dfdfdf'},
                         }
                       }
                       carouselConfig={
@@ -75,12 +75,12 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
     {
       showFullscreenPreview >= 0 &&
       <Modal onClose={() => setShowFullscreenPreview(-1)}>
-        <div className={'w-[90vw] h-[90vh]'}>
+        <div className={'w-[90vw] h-[90vh] overflow-hidden'}>
           <SlideInFeeds slides={assets}
                         highlightConfig={
                           {
                             preClassName: 'scrollbar-custom ',
-                            customWrapStyle: {padding: '18px 24px'},
+                            customWrapStyle: {padding: '18px 28px'},
                             customPreStyle: {padding: 20, background: 'none'}
                           }
                         }

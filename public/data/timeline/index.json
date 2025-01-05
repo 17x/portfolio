@@ -161,7 +161,7 @@
       },
       {
         "type": "simple",
-        "description": "An SPA for job interview",
+        "description": "A SPA for job interview",
         "demo": {
           "stacks": "AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)",
           "link": "/demos/fzwjg/dist/",

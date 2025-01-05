@@ -17,11 +17,11 @@ export type HighlightProps = {
 
 const defaultStyle = {width: '100%', height: '100%', overflow: 'hidden'}
 const Highlight = ({
-                                               url,
-                                               preClassName,
-                                               customPreStyle = {},
-                                               customWrapStyle = {}
-                                             }: HighlightProps) => {
+                     url,
+                     preClassName,
+                     customPreStyle = {},
+                     customWrapStyle = {}
+                   }: HighlightProps) => {
   const [text, setText] = useState<string>(null)
 
   useEffect(() => {
@@ -49,21 +49,17 @@ const Highlight = ({
       <SyntaxHighlighter language="javascript"
                          style={tomorrow}
                          className={preClassName}
-                         customStyle={{width: '100%', height: '100%', overflow: 'auto', ...customPreStyle}}>
+                         customStyle={{
+                           width: '100%',
+                           height: '100%',
+                           overflow: 'auto',
+                           borderRadius: '5px',
+                           boxShadow: 'inset 0 0 3px 1px #dfdfdf',
+                           ...customPreStyle
+                         }}>
         {text}
       </SyntaxHighlighter>
     </div>
   );
 };
 export default Highlight;
-
-type aProps = {
-  n:'bg-blue-500'
-}
-const A1 = (props: aProps) => {
-  return <div className={props.n}></div>
-}
-
-const a2 = (props: aProps) => {
-  return <A1 n={`bg-blue-500`} />
-}
