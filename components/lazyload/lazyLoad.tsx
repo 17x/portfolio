@@ -20,6 +20,7 @@ const LazyLoad: React.FC<Props> = ({children}) => {
       }
     }
 
+    check()
     bus.on('scroll', check);
 
     return () => {

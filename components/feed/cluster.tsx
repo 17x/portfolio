@@ -22,13 +22,13 @@ const ClusterFeed: FC<ModalProps> = ({
   return (
     <ContentComp themeColor={themeColor} assets={assets} icon={icon} description={description}>
       <div className={'mt-1 pt-1 text-sm flex items-start'}>
-        <h1 className={'mr-2'}>Links: </h1>
+        <h1 className={'mr-2'}>Link{list.length > 1?'s':''}: </h1>
         <div className={'gap-x-2 gap-y-1 text-sm flex flex-wrap items-center'}>
           {
             list.map((item, index) => {
               return (
                 <Link href={item.link}
-                      onClick={(e) => onClick(e, item)}
+                      onClick={item.openInNewTab ? null : (e) => onClick(e, item)}
                       key={index}
                       target={'_blank'}
                       className={'block text-center min-w-6 px-2 rounded border text-blue-400 hover:text-blue-800'}>{item.linkText || (index + 1)}</Link>

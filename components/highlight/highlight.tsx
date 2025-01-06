@@ -25,18 +25,13 @@ const Highlight = ({
   const [text, setText] = useState<string>(null)
 
   useEffect(() => {
+    if (url === '') return
     const get = async () => {
       const res = await (await fetch(url)).text()
       setText(res)
     }
 
     get()
-    /*
-        GetContent(url)
-          .then(res => {
-            setText(res)
-          })*/
-
   }, [])
 
   return (

@@ -1,11 +1,10 @@
 import bus from "./bus";
-import {Throttle} from "./method";
 
 const init = () => {
-  window.addEventListener('scroll',
-    Throttle(() => {
+  window.addEventListener('scrollend',
+    () => {
       bus.emit('scroll')
-    }, 200)
+    }
   )
 }
 

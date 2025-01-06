@@ -37,7 +37,42 @@ const data: TimelineNode[] = [
   {
     year: "2022",
     description: "",
-    data: []
+    data: [
+      {
+        type: "cluster",
+        description: "Developed applications using Flutter.",
+        list: [
+          {
+            linkText: 'Android APP ( download link )',
+            openInNewTab: true,
+            link: 'https://shop.andersonfoodsupply.com/download/anderson-shop.apk'
+          },
+          {
+            linkText: 'IOS APP( HongKong Only )',
+            openInNewTab: true,
+            link: 'https://apps.apple.com/hk/app/%E5%AE%89%E9%81%94%E9%A3%9F%E5%93%81/id1632138590'
+          },
+          {
+            linkText: 'Official website',
+            openInNewTab: true,
+            link: 'https://shop.andersonfoodsupply.com/'
+          },
+
+        ],
+        assets: [
+          {
+            type: 'code',
+            data: "",
+          }
+        ],
+      },
+      {
+        type: "simple",
+        description: "Started working for Times Interactive Media",
+        assets: [],
+        icon: "imgs/umem.png"
+      },
+    ]
   },
   {
     year: "2021",
@@ -56,17 +91,7 @@ const data: TimelineNode[] = [
       {
         type: "simple",
         description: "Started working for Naozhixin Technologies",
-        assets: [
-          {
-            type: 'text',
-            data: 'in charge of '
-          },
-          {
-            type: 'text',
-            data: 'in charge of '
-          }
-
-        ],
+        assets: [],
         icon: "imgs/nzx.jpg"
       },
       {
@@ -108,7 +133,7 @@ const data: TimelineNode[] = [
     description: "",
     data: [
       {
-        type: "cluster",
+        type: "simple",
         description: "Learned React, Webpack, and ES6, applied to new projects",
         icon: "imgs/react.png",
         assets: [
@@ -129,14 +154,12 @@ const data: TimelineNode[] = [
             data: "codes/ak-sw-drag-edit-page/reducer.js"
           },
         ],
-        list: [
-          {
-            link: "/demos/misc/ak-sw-drag-edit-page/public/",
-            linkText: "[Static Page] Drag and drop to generate portrait page",
-            media: "l"
-          }
-        ],
-        stacks: "React, Redux, Material-UI, Webpack"
+        demo: {
+          link: "/demos/misc/ak-sw-drag-edit-page/public/",
+          linkText: "[Static Page] Drag and drop to generate portrait page",
+          media: "l",
+          stacks: "React, Redux, Material-UI, Webpack"
+        }
       }
     ]
   },
@@ -237,7 +260,7 @@ const data: TimelineNode[] = [
             media: "l"
           }
         ],
-        stacks: 'Javascript HTML CSS'
+        stacks: 'HTML, CSS, Javascript'
       }
     ]
   },
