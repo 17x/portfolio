@@ -144,7 +144,7 @@ const Carousel = ({
 
       {
         showIndicator &&
-        <div className={'z-10 absolute bottom-0 w-full items-center flex'}>
+        <div className={'z-10 absolute bottom-1 w-full items-center flex'}>
           <div className={'w-full flex gap-1 justify-center'}>
             {
               Array.from({length: CLEN}, (_, i) => (

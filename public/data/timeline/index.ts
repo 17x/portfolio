@@ -72,7 +72,7 @@ const data: TimelineNode[] = [
       {
         type: "cluster",
         description: [
-          "Interview questions",
+          "Finished interview questions",
           " 1: right-click to create a dragable square on Canvas, bring it front by left-click.",
           " 2: Render six letters on the Canvas; left-click to change the color of the clicked letter, and right-click to change the color of the three letters that the clicked letter belongs to.",
           " 3: Render an image onto the Canvas and color the nearby pixels that SIMILAR the color of the clicked pixel."
@@ -98,7 +98,10 @@ const data: TimelineNode[] = [
           {
             type: "img",
             data: "imgs/2019-01.gif"
-          }
+          },{
+            type: "img",
+            data: "imgs/nzx.jpg"
+          },
         ]
       }
     ]

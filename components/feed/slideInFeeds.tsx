@@ -20,14 +20,14 @@ const SlideInFeeds = ({slides, onClick, carouselConfig, highlightConfig}: Props)
           slides.map((item, index) => {
             return <div key={index}
                         onClick={() => onClick && onClick(index)}
-                        className={'flex-1 min-w-0 min-h-0 overflow-hidden'}>
+                        className={'flex-1 flex justify-center min-w-0 min-h-0 overflow-hidden'}>
               {
                 item.type === 'text' &&
                 <span>{item.data as string}</span>
               }
               {
                 item.type === 'img' &&
-                <img className={'inline-block object-contain max-h-full'}
+                <img className={'inline-block object-contain max-w-full max-h-full'}
                      src={item.data}
                      alt="" />
               }

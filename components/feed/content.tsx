@@ -46,7 +46,7 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
                       highlightConfig={
                         {
                           preClassName: 'scrollbar-custom ',
-                          customWrapStyle: {height: 180, padding: assets.length > 1 ? '0 28px' : ''},
+                          customWrapStyle: {height: 180, padding: assets.length > 1 ? '10px 28px' : '10px'},
                           customPreStyle: {padding: 10, background: 'none', boxShadow: 'inset 0 0 3px 1px #dfdfdf'},
                         }
                       }
@@ -88,14 +88,14 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
                         highlightConfig={
                           {
                             preClassName: 'scrollbar-custom ',
-                            customWrapStyle: {padding: assets.length > 1 ? '18px 28px' : ''},
+                            customWrapStyle: {/*padding: assets.length > 1 ? '18px 28px' : ''*/},
                             customPreStyle: {padding: 20, background: 'none'}
                           }
                         }
                         carouselConfig={
                           {
                             autoplay: false,
-                            indicator: false,
+                            // indicator: false,
                             style: styles2,
                             defaultIndex: showFullscreenPreview
                           }
