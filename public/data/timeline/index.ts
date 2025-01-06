@@ -20,20 +20,19 @@ const data: TimelineNode[] = [
     data: [
       {
         type: "simple",
-        description: "Created the page you’re currently visiting.",
-        demo: {
-          openInNewTab: true,
-          linkText: 'Github Repo',
-          link: 'https://github.com/lucasischow/lucasischow.github.io',
-          stacks: 'Next.js, TypeScript, and Tailwind CSS'
-        }
+        description: "Keep exploring the world. Obtained a visa and moved to Japan."
       }
     ]
   },
   {
     year: "2023",
     description: "",
-    data: []
+    data: [
+      {
+        type: "simple",
+        description: "Started a gap period"
+      }
+    ]
   },
   {
     year: "2022",
