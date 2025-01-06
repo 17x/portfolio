@@ -19,6 +19,7 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
 
   // const borderColor = themeColor.replace(/[2-9]/, (char) => (Number(char) - 1).toString())
   const _f = description instanceof Array
+
   return <>
     <div className={`min-h-10 items-center flex overflow-hidden`}>
       {icon && <IconComp icon={icon} />}
@@ -27,7 +28,7 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
         <div className={`break-words text-neutral-800 first-letter:text-2xl first-letter:mr-[1px]`}>
           {
             _f
-              ? description.map((item, i) => <p key={i}>{decodeURIComponent(item)}</p>)
+              ? description.map((item, i) => <p className={'mb-1'} key={i}>{decodeURIComponent(item)}</p>)
               : <span>{decodeURIComponent(description)}</span>
           }
         </div>

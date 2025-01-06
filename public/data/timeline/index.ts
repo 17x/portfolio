@@ -80,14 +80,17 @@ const data: TimelineNode[] = [
         list: [
           {
             link: "/demos/misc/nzx/q1",
+            linkText: 'Question 1',
             media: "l"
           },
           {
             link: "/demos/misc/nzx/q2",
+            linkText: 'Question 2',
             media: "l"
           },
           {
             link: "/demos/misc/nzx/q3",
+            linkText: 'Question 3',
             media: "l"
           }
         ],
