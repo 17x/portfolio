@@ -12,13 +12,18 @@ interface ModalProps {
   themeColor?: string
 }
 
-const SimpleFeed: FC<ModalProps> = ({data: {demo, icon, assets, description}, onClick, themeColor}: ModalProps) => {
+const SimpleFeed: FC<ModalProps> = ({
+                                      data: {demo, icon, assets, description},
+                                      onClick,
+                                      themeColor
+                                    }: ModalProps) => {
+  console.log(demo)
   return (
     <ContentComp themeColor={themeColor} icon={icon} assets={assets} description={description}>
       {
         demo && demo.link &&
         <Link href={demo.link}
-              onClick={(e) => onClick(e, demo)}
+              onClick={demo.openInNewTab ? null : (e) => onClick(e, demo)}
               target={'_blank'}
               className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{demo.linkText || 'Link'}</Link>
       }

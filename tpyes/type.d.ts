@@ -31,6 +31,7 @@ declare global {
   declare type DemoLink = {
     link?: string
     linkText?: string
+    openInNewTab?: boolean
     media?: DemoMediaType
     // assets?: DemoAssets[]
     stacks?: string

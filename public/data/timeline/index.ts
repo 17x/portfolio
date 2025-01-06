@@ -5,7 +5,12 @@ const data: TimelineNode[] = [
     "data": [
       {
         "type": "simple",
-        "description": "Created the page you’re currently visiting."
+        "description": "Created the page you’re currently visiting.",
+        demo: {
+          openInNewTab: true,
+          linkText: 'Github Repo',
+          link: 'https://github.com/lucasischow/lucasischow.github.io'
+        }
       }
     ]
   },
