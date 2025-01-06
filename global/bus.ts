@@ -1,53 +1,50 @@
+type Callback = (any) => void;
+
 class Bus {
-  private eventList: { [key: string]: Function[] } = {}
+  private static instance: Bus = new Bus()
+  private callbacks: Record<string, Set<Callback>> = {};
 
-  constructor() {
-
+  private constructor() {
   }
 
-  on(eventName: string, callback: Function): void {
-    const {eventList} = this
-
-    if (!eventList.hasOwnProperty(eventName)) {
-      eventList[eventName] = []
+  public static getInstance(): Bus {
+    if (!this.instance) {
+      this.instance = new Bus();
     }
 
-    eventList[eventName].push(callback)
+    return this.instance;
   }
 
-  off(eventName: string, callback: Function): void {
-    const {eventList} = this
-    // console.log(eventList)
-    if (eventList.hasOwnProperty(eventName)) {
-      const _i = eventList[eventName].indexOf(callback)
+  on(eventName: string, callback: Callback): void {
+    if (!this.callbacks[eventName]) {
+      this.callbacks[eventName] = new Set();
+    }
+    this.callbacks[eventName].add(callback);
+  }
 
-      if (_i > -1) {
-        eventList[eventName].splice(_i, 1)
-        console.log(eventList[eventName])
+  off(eventName: string, callback: Callback): void {
+    if (this.callbacks[eventName]) {
+      this.callbacks[eventName].delete(callback);
+
+      if (this.callbacks[eventName].size === 0) {
+        delete this.callbacks[eventName];
       }
-    } else {
-      console.warn('Cannot find event name', eventName)
     }
 
-    console.log(this)
+    console.log(this.callbacks)
   }
 
-  emit(eventName: string, arg?: any): void {
-    const {eventList} = this
-    const arr = eventList[eventName] || []
-    const len = arr.length - 1;
-    // console.log(eventName, arg)
-    if (arr.length === 0) return
-
-    for (let i = len; i >= 0; --i) {
-      arr[i](arg);
-    }
+  emit(eventName: string, args?: any[]): void {
+    this.callbacks[eventName]?.forEach((callback) => callback(args));
   }
 
   destroy(): void {
-    this.eventList = null
+    for (const key in this.callbacks) {
+      this.callbacks[key].clear()
+      delete this.callbacks[key];
+    }
   }
 }
 
-const bus = new Bus()
+const bus = Bus.getInstance()
 export default bus

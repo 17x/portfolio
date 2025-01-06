@@ -3,7 +3,7 @@ import Carousel from "../carousel";
 import Highlight from "../highlight";
 import {CarouselProps} from "../carousel/carousel";
 import {HighlightProps} from "../highlight/highlight";
-import Image from "../image";
+import LazyLoad from "../lazyload/lazyLoad";
 
 type Props = {
   slides: DemoAssets[]
@@ -26,10 +26,11 @@ const SlideInFeeds = ({slides, onClick, carouselConfig, highlightConfig}: Props)
             }
             {
               item.type === 'img' &&
-              <Image lazy
-                     className={'inline-block object-contain max-h-full'}
+              <LazyLoad>
+                <img className={'inline-block object-contain max-h-full'}
                      src={item.data}
                      alt="" />
+              </LazyLoad>
             }
             {
               item.type === 'code' &&

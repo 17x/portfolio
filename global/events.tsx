@@ -1,23 +1,14 @@
-'use client'
-import Bus from "./bus";
+import bus from "./bus";
+import {Throttle} from "./method";
 
-window.addEventListener('scroll', function (event) {
-  Bus.emit('scroll', event)
-})
+const init = (env: Window) => {
+  if (!env) return
 
-type Callback = (off: (any?) => void, ...args: any[]) => void
-type ScrollType = (cb: Callback) => void
-
-const Scroll: ScrollType = callback => {
-  const mid = (...arg) => {
-    callback(
-      () => Bus.off('scroll', mid),
-      ...arg
-    )
-  }
-
-  Bus.on('scroll', mid)
-  console.log(Bus)
+  env.addEventListener('scroll',
+    Throttle(() => {
+      bus.emit('scroll')
+    }, 17)
+  )
 }
 
-export {Scroll};
+export default init

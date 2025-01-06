@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "react";
-import {Scroll} from "../../global/events";
+import {useGlobalEvent} from "../../hooks";
 
 type Props = {
   children: React.ReactNode | React.ReactNode[]
@@ -9,18 +9,15 @@ const LazyLoad: React.FC<Props> = ({children}) => {
   const [loaded, setLoaded] = useState(false)
   const iRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    if (!loaded) {
-      Scroll(off => {
-        const b = iRef.current.getBoundingClientRect().bottom
+  useGlobalEvent('scroll', () => {
+    if (loaded) return
 
-        if (b < window.innerHeight) {
-          off()
-          setLoaded(true)
-        }
-      })
+    const b = iRef.current.getBoundingClientRect().bottom
+
+    if (b < window.innerHeight) {
+      setLoaded(true)
     }
-  }, [])
+  }, loaded)
 
   return (
     loaded ? children : <b ref={iRef} style={{width: 0, height: 0}} />

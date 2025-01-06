@@ -8,7 +8,7 @@ interface Props extends Omit<GenericRecord<{}>, 'type'> {
   themeColor?: string
 }
 
-const styles1 = {width: '100%', height: 200}
+// const styles1 = {width: '100%', height: 200}
 const styles2 = {width: '100%', height: '100%', borderRadius: '3px'};
 const defaultBorderColorValue = 'gray-300'
 
