@@ -10,7 +10,7 @@ const LazyLoad: React.FC<Props> = ({children}) => {
   const iRef = useRef<HTMLElement>(null);
 
   const check = () => {
-    if (loaded) return
+    if (loaded || !iRef.current) return
     const b = iRef.current.getBoundingClientRect().bottom
 
     if (b < window.innerHeight) {
@@ -23,7 +23,6 @@ const LazyLoad: React.FC<Props> = ({children}) => {
   }, loaded)
 
   useEffect(() => {
-    console.log('check')
     check()
   }, []);
   return (
