@@ -17,7 +17,6 @@ const SimpleFeed: FC<ModalProps> = ({
                                       onClick,
                                       themeColor
                                     }: ModalProps) => {
-  console.log(demo)
   return (
     <ContentComp themeColor={themeColor} icon={icon} assets={assets} description={description}>
       {
