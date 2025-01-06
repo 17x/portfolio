@@ -56,16 +56,16 @@ const data: TimelineNode[] = [
       {
         type: "simple",
         description: "Started working for Naozhixin Technologies",
-        demo: {},
         assets: [
           {
-            type: "code",
-            data: "codes/ak-sw-drag-edit-page/webpack.config.js"
+            type: 'text',
+            data: 'in charge of '
           },
           {
-            type: "text",
-            data: "2"
+            type: 'text',
+            data: 'in charge of '
           }
+
         ],
         icon: "imgs/nzx.jpg"
       },
@@ -98,10 +98,7 @@ const data: TimelineNode[] = [
           {
             type: "img",
             data: "imgs/2019-01.gif"
-          },{
-            type: "img",
-            data: "imgs/nzx.jpg"
-          },
+          }
         ]
       }
     ]

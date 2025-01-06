@@ -3,11 +3,14 @@
 import {useEffect, useState} from "react";
 import TimelineNodes from "../components/timelineNodes";
 import data from "../public/data/timeline";
+import init from "../global/events";
 
 const Page = () => {
   const [feeds, setFeeds] = useState([])
 
   useEffect(() => {
+    init()
+
     async function getData() {
       // const nodeList: TimelineNode[] = await (await fetch('data/timeline/index.json')).json()
 

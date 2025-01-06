@@ -45,4 +45,5 @@ class Bus {
 }
 
 const bus = Bus.getInstance()
+
 export default bus

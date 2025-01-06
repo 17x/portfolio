@@ -7,7 +7,7 @@ let initialized = false
 export const useGlobalEvent = (eventName: string, callback: (event: Event) => void, stopTag = false) => {
   useEffect(() => {
     if (!initialized) {
-      init(window)
+      init()
     }
 
     /**
