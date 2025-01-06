@@ -14,33 +14,34 @@ type Props = {
 
 const SlideInFeeds = ({slides, onClick, carouselConfig, highlightConfig}: Props) => {
   return (
-    <Carousel  {...carouselConfig}>
-      {
-        slides.map((item, index) => {
-          return <div key={index}
-                      onClick={() => onClick && onClick(index)}
-                      className={'flex-1 min-w-0 min-h-0 overflow-hidden'}>
-            {
-              item.type === 'text' &&
-              <span>{item.data as string}</span>
-            }
-            {
-              item.type === 'img' &&
-              <LazyLoad>
+    <LazyLoad>
+      <Carousel  {...carouselConfig}>
+        {
+          slides.map((item, index) => {
+            return <div key={index}
+                        onClick={() => onClick && onClick(index)}
+                        className={'flex-1 min-w-0 min-h-0 overflow-hidden'}>
+              {
+                item.type === 'text' &&
+                <span>{item.data as string}</span>
+              }
+              {
+                item.type === 'img' &&
                 <img className={'inline-block object-contain max-h-full'}
                      src={item.data}
                      alt="" />
-              </LazyLoad>
-            }
-            {
-              item.type === 'code' &&
-              <Highlight url={item.data as string}
-                         {...highlightConfig} />
-            }
+              }
+              {
+                item.type === 'code' &&
+                <Highlight url={item.data as string}
+                           {...highlightConfig} />
+              }
 
-          </div>
-        })}
-    </Carousel>
+            </div>
+          })}
+      </Carousel>
+    </LazyLoad>
+
   );
 };
 export default SlideInFeeds;

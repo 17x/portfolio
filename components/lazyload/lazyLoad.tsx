@@ -9,16 +9,23 @@ const LazyLoad: React.FC<Props> = ({children}) => {
   const [loaded, setLoaded] = useState(false)
   const iRef = useRef<HTMLElement>(null);
 
-  useGlobalEvent('scroll', () => {
+  const check = () => {
     if (loaded) return
-
     const b = iRef.current.getBoundingClientRect().bottom
 
     if (b < window.innerHeight) {
       setLoaded(true)
     }
+  }
+
+  useGlobalEvent('scroll', () => {
+    check()
   }, loaded)
 
+  useEffect(() => {
+    console.log('check')
+    check()
+  }, []);
   return (
     loaded ? children : <b ref={iRef} style={{width: 0, height: 0}} />
   )
