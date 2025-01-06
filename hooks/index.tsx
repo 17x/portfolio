@@ -15,7 +15,7 @@ export const useGlobalEvent = (eventName: string, callback: (event: Event) => vo
      */
     if (!stopTag) {
       bus.on(eventName, callback);
-      console.log('on')
+
       return () => {
         bus.off(eventName, callback);
       };

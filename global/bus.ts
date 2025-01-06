@@ -30,8 +30,6 @@ class Bus {
         delete this.callbacks[eventName];
       }
     }
-
-    console.log(this.callbacks)
   }
 
   emit(eventName: string, args?: any[]): void {
