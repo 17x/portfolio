@@ -260,8 +260,8 @@ const data: TimelineNode[] = [
           },
           {
             link: "/demos/misc/zTouch/",
-            linkText: "Touch events module(mobile access needed)",
-            media: "l"
+            linkText: "Touch events module",
+            media: "s"
           }
         ],
         stacks: 'HTML, CSS, Javascript'

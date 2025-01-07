@@ -29,7 +29,7 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
           {
             _f
               ? description.map((item, i) => <p className={'mb-1'} key={i}>{decodeURIComponent(item)}</p>)
-              : <span>{decodeURIComponent(description)}</span>
+              : <span className={'break-all'}>{decodeURIComponent(description)}</span>
           }
         </div>
 
@@ -46,7 +46,7 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
                       highlightConfig={
                         {
                           preClassName: 'scrollbar-custom ',
-                          customWrapStyle: {height: 180, padding: assets.length > 1 ? '0 28px' : '10px'},
+                          customWrapStyle: {height: 180, padding: assets.length > 1 ? '0 1.5rem' : '10px'},
                           customPreStyle: {padding: 10, background: 'none', /*boxShadow: 'inset 0 0 3px 1px #dfdfdf'*/},
                         }
                       }

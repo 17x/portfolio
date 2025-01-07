@@ -52,7 +52,7 @@ const TimelineNodes = ({feeds}: { feeds: TimelineNode[] }) => {
                 <h4 className={'inline-block align-middle ml-4 ' + textColor}>{feed.description}</h4>
               </div>
 
-              <div className={'ml-16 pb-20'}>
+              <div className={'ml-4 md:ml-10 lg:ml-16 pb-20'}>
                 <div className={'ml-0 mt-4 flex-1 pb-0 pl-0 rounded-lg border-' + colors[idx]}>
                   {/*<h4 className={textColor}>{feed.title}</h4>*/}
                   <Index data={feed.data} sectionTheme={colors[idx]} />
