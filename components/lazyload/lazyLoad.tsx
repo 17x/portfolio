@@ -4,7 +4,7 @@ import bus from "../../global/bus";
 type Props = {
   children: React.ReactNode | React.ReactNode[]
 }
-
+const bufferDistance = 100
 const LazyLoad: React.FC<Props> = ({children}) => {
   const [loaded, setLoaded] = useState(false)
   const iRef = useRef<HTMLElement>(null);
@@ -14,7 +14,7 @@ const LazyLoad: React.FC<Props> = ({children}) => {
       if (loaded || !iRef.current) return
       const b = iRef.current.getBoundingClientRect().bottom
 
-      if (b < window.innerHeight) {
+      if ((b - window.innerHeight) < bufferDistance) {
         bus.off('scroll', check);
         setLoaded(true)
       }

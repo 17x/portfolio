@@ -41,13 +41,13 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
 
     {
       showSlider &&
-      <div className={`pt-6 mt-4 relative  border-t-[1px] border-${defaultBorderColorValue}`}>
+      <div className={`pt-0 mt-4 relative `}>
         <SlideInFeeds slides={assets}
                       highlightConfig={
                         {
                           preClassName: 'scrollbar-custom ',
-                          customWrapStyle: {height: 180, padding: assets.length > 1 ? '10px 28px' : '10px'},
-                          customPreStyle: {padding: 10, background: 'none', boxShadow: 'inset 0 0 3px 1px #dfdfdf'},
+                          customWrapStyle: {height: 180, padding: assets.length > 1 ? '0 28px' : '10px'},
+                          customPreStyle: {padding: 10, background: 'none', /*boxShadow: 'inset 0 0 3px 1px #dfdfdf'*/},
                         }
                       }
                       carouselConfig={

@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cp -r ./out ../lucasischow.github.io/
+cp -r ./out/* ../lucasischow.github.io/
 exit

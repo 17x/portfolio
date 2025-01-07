@@ -62,8 +62,12 @@ const data: TimelineNode[] = [
         assets: [
           {
             type: 'code',
-            data: "",
-          }
+            data: "codes/anderson-shop/pubspec.yaml",
+          },
+          {
+            type: 'code',
+            data: "codes/anderson-shop/home.dart",
+          },
         ],
       },
       {
