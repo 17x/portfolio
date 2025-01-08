@@ -133,7 +133,6 @@ const data: TimelineNode[] = [
             link: '/demos/misc/color-picker',
             linkText: 'color-picker',
           }
-
         ],
         assets: [
           {
