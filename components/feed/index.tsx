@@ -16,7 +16,7 @@ const Index = ({data, sectionTheme}: { data: TimelineNodeRecord[], sectionTheme?
       {
         data && data.map((item, idx: number) => {
           return <div key={idx}
-                      className={'min-h-10 items-center flex rounded-md overflow-hidden p-4 sm:p-4 border border-' + sectionTheme}
+                      className={'min-h-16 sm:min-h-24 items-center flex rounded-md overflow-hidden p-3 sm:p-4 border border-' + sectionTheme}
           >
             <div className={'flex flex-col overflow-hidden w-full'}>
               {item.type === 'simple' &&

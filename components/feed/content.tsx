@@ -21,7 +21,7 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
   const _f = description instanceof Array
 
   return <>
-    <div className={`min-h-6 items-center flex overflow-hidden`}>
+    <div className={`min-h-6 items-stretch flex overflow-hidden`}>
       {icon && <IconComp icon={icon} />}
       <div className={'whitespace-pre-line content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
         <div className={`break-words text-neutral-800 first-letter:text-xl first-letter:mr-[1px]`}>
