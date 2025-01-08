@@ -9,7 +9,7 @@ const data: TimelineNode[] = [
         demo: {
           openInNewTab: true,
           linkText: 'Github Repo',
-          link: 'https://github.com/lucasischow/lucasischow.github.io',
+          link: 'https://github.com/17x/portfolio',
           stacks: 'Next.js, TypeScript, and Tailwind CSS'
         }
       }

@@ -5,7 +5,7 @@ const init = () => {
   window.addEventListener('scroll',
     Throttle(() => {
       bus.emit('scroll')
-    }, 200)
+    }, 100)
   )
 
   window.addEventListener('scrollend',

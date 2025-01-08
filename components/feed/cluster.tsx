@@ -22,18 +22,18 @@ const ClusterFeed: FC<ModalProps> = ({
   return (
     <ContentComp themeColor={themeColor} assets={assets} icon={icon} description={description}>
       <div className={'mt-1 pt-1 text-sm items-center'}>
-        <h1 className={'mr-2'}>Link{list.length > 1 ? 's' : ''}: </h1>
+        <h1 className={'mr-2 text-gray-600 font-bold mb-2'}>Link{list.length > 1 ? 's' : ''}: </h1>
         <div className={'gap-x-2 gap-y-1 text-sm flex flex-wrap items-center'}>
           {
             list.map((item, index) => {
               let _text = item.linkText || (index + 1)
 
               if (item.media === 'l') {
-                _text = '[Desktop] ' + _text
+                // _text = '[Desktop] ' + _text
               }
 
               if (item.media === 's') {
-                _text = '[Phone] ' + _text
+                // _text = '[Phone] ' + _text
               }
 
               return (
@@ -41,7 +41,7 @@ const ClusterFeed: FC<ModalProps> = ({
                       onClick={item.openInNewTab ? null : (e) => onClick(e, item)}
                       key={index}
                       target={'_blank'}
-                      className={'block text-center min-w-6 px-2 rounded border text-blue-400 hover:text-blue-800'}>{_text}</Link>
+                      className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{_text}</Link>
               );
             })
           }</div>

@@ -21,15 +21,16 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
   const _f = description instanceof Array
 
   return <>
-    <div className={`min-h-10 items-center flex overflow-hidden`}>
+    <div className={`min-h-6 items-center flex overflow-hidden`}>
       {icon && <IconComp icon={icon} />}
-
       <div className={'whitespace-pre-line content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
-        <div className={`break-words text-neutral-800 first-letter:text-2xl first-letter:mr-[1px]`}>
+        <div className={`break-words text-neutral-800 first-letter:text-xl first-letter:mr-[1px]`}>
           {
             _f
-              ? description.map((item, i) => <p className={'mb-1'} key={i}>{decodeURIComponent(item)}</p>)
-              : <span className={'break-all'}>{decodeURIComponent(description)}</span>
+              ? description.map((item, i) =>
+                <p className={'first:text-gray-600 first:font-medium pl-[0.9rem] mb-2 indent-[-0.9rem] first-line:indent-4'}
+                   key={i}>{decodeURIComponent(item)}</p>)
+              : <p className={'first:text-gray-600 first:font-medium'}>{decodeURIComponent(description)}</p>
           }
         </div>
 
@@ -55,7 +56,7 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
                           // autoplay: false,
                           style: {
                             width: '100%',
-                            height: assets.length > 1 ? 200 : 'auto'
+                            // height: assets.length > 1 ? 200 : 'auto'
                           },
                           onIndexChange: (i) => {
                             setCarouselIndex(i)
