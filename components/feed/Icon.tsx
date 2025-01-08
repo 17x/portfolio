@@ -3,7 +3,7 @@ import React from "react";
 import LazyLoad from "../lazyload/lazyLoad";
 
 const IconComp = ({icon}) => {
-  return <div className={'mr-8 p-2 w-20 h-20 content-center'}>
+  return <div className={'mr-8 max-w-20 max-h-20 content-center'}>
     <LazyLoad>
       <img className={'inline-block object-contain max-h-full'}
            src={icon}
