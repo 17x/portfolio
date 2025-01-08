@@ -43,19 +43,20 @@ const data: TimelineNode[] = [
         description: "data scraping",
         list: [],
         assets: [
-          /* {
+           {
              type: 'code',
-             data: "codes/anderson-shop/pubspec.yaml",
+             data: "codes/facebook-puppeteer/index.js",
            },
            {
              type: 'code',
-             data: "codes/anderson-shop/home.dart",
-           },*/
+             data: "codes/88db/taskQueue.js",
+           },
         ],
+        stacks: 'Selenium, Puppeteer, Node.js'
       },
       {
         type: "simple",
-        description: "Developed CRM and DND Website Generator system",
+        description: "Developed CRM and Website Generator system",
 
         demo: {
           link: '1',
