@@ -71,6 +71,38 @@ const data: TimelineNode[] = [
         ],
       },
       {
+        type: "cluster",
+        description: "Developed applications using Flutter.",
+        list: [
+          {
+            linkText: 'Android APP ( download link )',
+            openInNewTab: true,
+            link: 'https://shop.andersonfoodsupply.com/download/anderson-shop.apk'
+          },
+          {
+            linkText: 'IOS APP( HongKong Only )',
+            openInNewTab: true,
+            link: 'https://apps.apple.com/hk/app/%E5%AE%89%E9%81%94%E9%A3%9F%E5%93%81/id1632138590'
+          },
+          {
+            linkText: 'Official website',
+            openInNewTab: true,
+            link: 'https://shop.andersonfoodsupply.com/'
+          },
+
+        ],
+        assets: [
+          {
+            type: 'code',
+            data: "codes/anderson-shop/pubspec.yaml",
+          },
+          {
+            type: 'code',
+            data: "codes/anderson-shop/home.dart",
+          },
+        ],
+      },
+      {
         type: "simple",
         description: "Started working for Times Interactive Media",
         assets: [],
