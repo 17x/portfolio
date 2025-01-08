@@ -4,6 +4,7 @@ import Modal from "../modal";
 import IconComp from "./Icon";
 
 interface Props extends Omit<GenericRecord<{}>, 'type'> {
+  stacks?: string
   children?: React.ReactNode | React.ReactNode[]
   themeColor?: string
 }
@@ -12,7 +13,14 @@ interface Props extends Omit<GenericRecord<{}>, 'type'> {
 const styles2 = {width: '100%', height: '100%', borderRadius: '3px'};
 const defaultBorderColorValue = 'gray-300'
 
-const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorValue, icon, assets, children}) => {
+const ContentComp: FC<Props> = ({
+                                  description,
+                                  themeColor = defaultBorderColorValue,
+                                  icon,
+                                  assets,
+                                  stacks,
+                                  children
+                                }) => {
   const [showFullscreenPreview, setShowFullscreenPreview] = useState<number>(-1)
   const [carouselIndex, setCarouselIndex] = useState(0)
   const showSlider = assets && assets.length > 0
@@ -79,6 +87,13 @@ const ContentComp: FC<Props> = ({description, themeColor = defaultBorderColorVal
           </svg>
         </button>
       </div>
+    }
+
+    {
+      stacks &&
+      <>
+        <div className={'mt-5 italic text-xs text-neutral-500'}>{stacks}</div>
+      </>
     }
 
     {

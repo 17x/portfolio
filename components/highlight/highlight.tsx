@@ -53,6 +53,7 @@ const Highlight = ({
             height: '100%',
             overflow: 'auto',
             borderRadius: '5px',
+            fontSize:12,
             // boxShadow: 'none',
             ...customPreStyle
           }}>

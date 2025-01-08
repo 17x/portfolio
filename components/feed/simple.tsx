@@ -18,7 +18,11 @@ const SimpleFeed: FC<ModalProps> = ({
                                       themeColor
                                     }: ModalProps) => {
   return (
-    <ContentComp themeColor={themeColor} icon={icon} assets={assets} description={description}>
+    <ContentComp themeColor={themeColor}
+                 icon={icon}
+                 assets={assets}
+                 description={description}
+                 stacks={demo && demo.stacks}>
       {
         demo && demo.link &&
         <Link href={demo.link}
@@ -26,12 +30,7 @@ const SimpleFeed: FC<ModalProps> = ({
               target={'_blank'}
               className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{demo.linkText || 'Link'}</Link>
       }
-      {
-        demo && demo.stacks &&
-        <>
-          <div className={'mt-5 italic text-xs text-neutral-500'}>{demo.stacks}</div>
-        </>
-      }
+
     </ContentComp>
   );
 };

@@ -40,25 +40,27 @@ const data: TimelineNode[] = [
     data: [
       {
         type: "cluster",
-        description: "Developed applications using Flutter.",
-        list: [
-          {
-            linkText: 'Android APP ( download link )',
-            openInNewTab: true,
-            link: 'https://shop.andersonfoodsupply.com/download/anderson-shop.apk'
-          },
-          {
-            linkText: 'IOS APP( HongKong Only )',
-            openInNewTab: true,
-            link: 'https://apps.apple.com/hk/app/%E5%AE%89%E9%81%94%E9%A3%9F%E5%93%81/id1632138590'
-          },
-          {
-            linkText: 'Official website',
-            openInNewTab: true,
-            link: 'https://shop.andersonfoodsupply.com/'
-          },
-
+        description: "data scraping",
+        list: [],
+        assets: [
+          /* {
+             type: 'code',
+             data: "codes/anderson-shop/pubspec.yaml",
+           },
+           {
+             type: 'code',
+             data: "codes/anderson-shop/home.dart",
+           },*/
         ],
+      },
+      {
+        type: "simple",
+        description: "Developed CRM and DND Website Generator system",
+
+        demo: {
+          link: '1',
+          stacks: '1'
+        },
         assets: [
           {
             type: 'code',
@@ -72,7 +74,7 @@ const data: TimelineNode[] = [
       },
       {
         type: "cluster",
-        description: "Developed applications using Flutter.",
+        description: "Developed applications",
         list: [
           {
             linkText: 'Android APP ( download link )',
@@ -101,10 +103,11 @@ const data: TimelineNode[] = [
             data: "codes/anderson-shop/home.dart",
           },
         ],
+        stacks: 'Flutter'
       },
       {
         type: "simple",
-        description: "Started working for Times Interactive Media",
+        description: "Started working as a technical partner at Times Interactive Media",
         assets: [],
         icon: "imgs/umem.png"
       },
@@ -126,7 +129,7 @@ const data: TimelineNode[] = [
     data: [
       {
         type: "simple",
-        description: "Started working for Naozhixin Technologies",
+        description: "Started working as a front-end developer at Naozhixin Technologies",
         assets: [],
         icon: "imgs/nzx.jpg"
       },
@@ -306,7 +309,7 @@ const data: TimelineNode[] = [
     data: [
       {
         type: "cluster",
-        description: "Started working as a front-end developer at SIGBIT Computer Co. Ltd. in Guangzhou, Responsible for all front-end-related work.",
+        description: "Started working as a front-end developer at SIGBIT Computer Co. Ltd.",
         list: [
           {
             link: "/demos/wireless/dengmiSubPage/",
@@ -346,7 +349,7 @@ const data: TimelineNode[] = [
       },
       {
         type: "simple",
-        description: "An imitated page for my first Frontend developer job interview,",
+        description: "An imitated page for my first Frontend developer job interview",
         demo: {
           stacks: "HTML, CSS, JavaScript, JQuery",
           media: "l",
