@@ -44,16 +44,16 @@ const data: TimelineNode[] = [
         list: [],
         assets: [
           {
-            type: 'img',
-            data: "imgs/88db-1.png",
-          },
-          {
             type: 'code',
             data: "codes/facebook-puppeteer/index.js",
           },
           {
             type: 'code',
             data: "codes/88db/taskQueue.js",
+          },
+          {
+            type: 'img',
+            data: "imgs/88db-1.png",
           },
         ],
         stacks: 'Selenium, Puppeteer, Node.js'
