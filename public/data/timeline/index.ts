@@ -78,7 +78,7 @@ const data: TimelineNode[] = [
       },
       {
         type: "cluster",
-        description: "Developed applications and published to stores",
+        description: "Developed mobile Apps and published to stores",
         list: [
           {
             linkText: 'Android APP ( download link )',
@@ -124,9 +124,37 @@ const data: TimelineNode[] = [
       {
         type: "cluster",
         description: '1',
-        assets: [],
-        list: []
-      }
+        list: [
+          {
+            link: '',
+            linkText: 'paint tool',
+          },
+          {
+            link: '',
+            linkText: 'color-picker',
+          }
+
+        ],
+        assets: []
+      },{
+        type: "cluster",
+        description: 'Canvas effects',
+        list: [
+          {
+            link: '/demos/misc/canvas-effect-1',
+            linkText: '1',
+          },
+          {
+            link: '/demos/misc/canvas-effect-2',
+            linkText: '2',
+          },
+          {
+            link: '/demos/misc/canvas-effect-3',
+            linkText: '3',
+          },
+
+        ]
+      },
     ]
   },
   {
@@ -323,35 +351,35 @@ const data: TimelineNode[] = [
         description: "Started working as a front-end developer at SIGBIT Computer Co. Ltd.",
         list: [
           {
-            link: "/demos/wireless/dengmiSubPage/",
+            link: "/demos/sigbits/dengmiSubPage/",
             media: "s"
           },
           {
-            link: "/demos/wireless/leshihuiyuanmianfeiling/",
+            link: "/demos/sigbits/leshihuiyuanmianfeiling/",
             media: "s"
           },
           {
-            link: "/demos/wireless/LiRongHao/",
+            link: "/demos/sigbits/LiRongHao/",
             media: "s"
           },
           {
-            link: "/demos/wireless/muqinjie/",
+            link: "/demos/sigbits/muqinjie/",
             media: "s"
           },
           {
-            link: "/demos/wireless/olduserhuikui/",
+            link: "/demos/sigbits/olduserhuikui/",
             media: "s"
           },
           {
-            link: "/demos/wireless/qiandaosonghaoli/",
+            link: "/demos/sigbits/qiandaosonghaoli/",
             media: "s"
           },
           {
-            link: "/demos/wireless/tianjinmobiledownload2016chunjie/",
+            link: "/demos/sigbits/tianjinmobiledownload2016chunjie/",
             media: "s"
           },
           {
-            link: "/demos/wireless/tuniu/",
+            link: "/demos/sigbits/tuniu/",
             media: "s"
           }
         ],
