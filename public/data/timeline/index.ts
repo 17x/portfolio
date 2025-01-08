@@ -53,7 +53,7 @@ const data: TimelineNode[] = [
           },
           {
             type: 'img',
-            data: "imgs/88db-1.png",
+            data: "imgs/88db-01.png",
           },
         ],
         stacks: 'Selenium, Puppeteer, Node.js'
@@ -130,13 +130,18 @@ const data: TimelineNode[] = [
             linkText: 'paint tool',
           },
           {
-            link: '',
+            link: '/demos/misc/color-picker',
             linkText: 'color-picker',
           }
 
         ],
-        assets: []
-      },{
+        assets: [
+          {
+            type: 'img',
+            data: 'imgs/2021-02.png'
+          }
+        ]
+      }, {
         type: "cluster",
         description: 'Canvas effects',
         list: [
@@ -148,11 +153,12 @@ const data: TimelineNode[] = [
             link: '/demos/misc/canvas-effect-2',
             linkText: '2',
           },
+        ],
+        assets: [
           {
-            link: '/demos/misc/canvas-effect-3',
-            linkText: '3',
+            type: 'img',
+            data: 'imgs/2021-01.png'
           },
-
         ]
       },
     ]
