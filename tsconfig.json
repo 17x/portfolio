@@ -30,6 +30,7 @@
 //    "/Users/yahone/projects/lucasischow.github.io/docs/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "public"
   ]
 }

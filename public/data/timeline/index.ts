@@ -63,7 +63,7 @@ const data: TimelineNode[] = [
         description: "Developed CRM system and Website Generator system",
         demo: {
           link: '1',
-          stacks: 'React, Material-UI, Redux'
+          stacks: 'React, Redux, Typescript, Material-UI'
         },
         assets: [
           {
@@ -120,7 +120,14 @@ const data: TimelineNode[] = [
   {
     year: "2021",
     description: "",
-    data: []
+    data: [
+      {
+        type: "cluster",
+        description: '1',
+        assets: [],
+        list: []
+      }
+    ]
   },
   {
     year: '2020',
