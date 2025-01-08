@@ -18,12 +18,16 @@ const ClusterFeed: FC<ModalProps> = ({
                                        onClick,
                                        ...rest
                                      }: ModalProps) => {
+  const LEN = list.length
 
   return (
     <ContentComp themeColor={themeColor} assets={assets} icon={icon} description={description}
                  stacks={stacks}>
       <div className={'mt-1 pt-1 text-sm items-center'}>
-        <h1 className={'mr-2 text-gray-600 font-bold mb-2'}>Link{list.length > 1 ? 's' : ''}: </h1>
+        {
+          LEN > 0 &&
+          <h1 className={'mr-2 text-gray-600 font-bold mb-2'}>'Link'{LEN > 1 && 's'}: </h1>
+        }
         <div className={'gap-x-2 gap-y-1 text-sm flex flex-wrap items-center'}>
           {
             list.map((item, index) => {

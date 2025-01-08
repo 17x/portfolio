@@ -43,39 +43,42 @@ const data: TimelineNode[] = [
         description: "data scraping",
         list: [],
         assets: [
-           {
-             type: 'code',
-             data: "codes/facebook-puppeteer/index.js",
-           },
-           {
-             type: 'code',
-             data: "codes/88db/taskQueue.js",
-           },
+          {
+            type: 'img',
+            data: "imgs/88db-1.png",
+          },
+          {
+            type: 'code',
+            data: "codes/facebook-puppeteer/index.js",
+          },
+          {
+            type: 'code',
+            data: "codes/88db/taskQueue.js",
+          },
         ],
         stacks: 'Selenium, Puppeteer, Node.js'
       },
       {
         type: "simple",
-        description: "Developed CRM and Website Generator system",
-
+        description: "Developed CRM system and Website Generator system",
         demo: {
           link: '1',
-          stacks: '1'
+          stacks: 'React, Material-UI, Redux'
         },
         assets: [
           {
             type: 'code',
-            data: "codes/anderson-shop/pubspec.yaml",
+            data: "codes/emedia-page-design/index.tsx",
           },
           {
             type: 'code',
-            data: "codes/anderson-shop/home.dart",
+            data: "codes/emedia-platform-fed/App.tsx",
           },
         ],
       },
       {
         type: "cluster",
-        description: "Developed applications",
+        description: "Developed applications and published to stores",
         list: [
           {
             linkText: 'Android APP ( download link )',
