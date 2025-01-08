@@ -1,7 +1,9 @@
 import React, {FC, useState} from "react";
-import SlideInFeeds from "./slideInFeeds";
 import Modal from "../modal";
-import IconComp from "./Icon";
+import Carousel from "../carousel";
+import Highlight from "../highlight";
+import LazyLoad from "../lazyload/lazyLoad";
+import {HighlightProps} from "../highlight/highlight";
 
 interface Props extends Omit<GenericRecord<{}>, 'type'> {
   stacks?: string
@@ -9,8 +11,21 @@ interface Props extends Omit<GenericRecord<{}>, 'type'> {
   themeColor?: string
 }
 
-// const styles1 = {width: '100%', height: 200}
-const styles2 = {width: '100%', height: '100%', borderRadius: '3px'};
+
+const carouselStyle1 = {
+  width: '100%',
+}
+const carouselStyle2 = {width: '100%', height: '100%', borderRadius: '3px'};
+const highlightConfig1 = {
+  preClassName: 'scrollbar-custom ',
+  customWrapStyle: {height: 180, padding: '10px'},
+  customPreStyle: {padding: 10, background: 'none'},
+}
+const highlightConfig2 = {
+  preClassName: 'scrollbar-custom ',
+  // customWrapStyle: {/*padding: assets.length > 1 ? '18px 28px' : ''*/},
+  customPreStyle: {padding: 20, background: 'none'}
+}
 const defaultBorderColorValue = 'gray-300'
 
 const ContentComp: FC<Props> = ({
@@ -23,14 +38,25 @@ const ContentComp: FC<Props> = ({
                                 }) => {
   const [showFullscreenPreview, setShowFullscreenPreview] = useState<number>(-1)
   const [carouselIndex, setCarouselIndex] = useState(0)
-  const showSlider = assets && assets.length > 0
+  const sliderLen = assets ? assets.length : 0
 
   // const borderColor = themeColor.replace(/[2-9]/, (char) => (Number(char) - 1).toString())
   const _f = description instanceof Array
 
+  if (sliderLen > 1) {
+    highlightConfig1.customWrapStyle.padding = '0 1.5rem'
+  }
   return <>
     <div className={`min-h-6 items-stretch flex overflow-hidden`}>
-      {icon && <IconComp icon={icon} />}
+      {
+        icon && <div className={'mr-4 sm:mr-8 max-w-12 max-h-12 sm:max-w-20 sm:max-h-20 content-center flex'}>
+          <LazyLoad>
+            <img className={'object-contain'}
+                 src={icon}
+                 alt="" />
+          </LazyLoad>
+        </div>
+      }
       <div className={'whitespace-pre-line content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
         <div className={`break-words text-neutral-800 first-letter:text-xl first-letter:mr-[1px]`}>
           {
@@ -49,28 +75,23 @@ const ContentComp: FC<Props> = ({
     </div>
 
     {
-      showSlider &&
+      sliderLen > 0 &&
       <div className={`pt-0 mt-4 relative `}>
-        <SlideInFeeds slides={assets}
-                      highlightConfig={
-                        {
-                          preClassName: 'scrollbar-custom ',
-                          customWrapStyle: {height: 180, padding: assets.length > 1 ? '0 1.5rem' : '10px'},
-                          customPreStyle: {padding: 10, background: 'none', /*boxShadow: 'inset 0 0 3px 1px #dfdfdf'*/},
-                        }
-                      }
-                      carouselConfig={
-                        {
-                          // autoplay: false,
-                          style: {
-                            width: '100%',
-                            // height: assets.length > 1 ? 200 : 'auto'
-                          },
-                          onIndexChange: (i) => {
-                            setCarouselIndex(i)
-                          }
-                        }
-                      } />
+        <LazyLoad>
+          <Carousel style={carouselStyle1}
+                    onIndexChange={(i) => {
+                      setCarouselIndex(i)
+                    }}>
+            {
+              assets.map((item, index) => {
+                return <SlideItem item={item}
+                                  key={index}
+                                  highlightConfig={highlightConfig1}
+                                  imgMaxHeight={'max-h-40'} />
+              })}
+          </Carousel>
+        </LazyLoad>
+
         <button
           onClick={() => setShowFullscreenPreview(carouselIndex)}
           className={`absolute right-0 bottom-0 z-20 p-2 rounded-full bg-${themeColor} opacity-20 hover:opacity-100 flex items-center justify-center`}>
@@ -100,26 +121,50 @@ const ContentComp: FC<Props> = ({
       showFullscreenPreview >= 0 &&
       <Modal onClose={() => setShowFullscreenPreview(-1)}>
         <div className={'w-[90vw] h-[90vh] overflow-hidden'}>
-          <SlideInFeeds slides={assets}
-                        highlightConfig={
-                          {
-                            preClassName: 'scrollbar-custom ',
-                            customWrapStyle: {/*padding: assets.length > 1 ? '18px 28px' : ''*/},
-                            customPreStyle: {padding: 20, background: 'none'}
-                          }
-                        }
-                        carouselConfig={
-                          {
-                            autoplay: false,
-                            // indicator: false,
-                            style: styles2,
-                            defaultIndex: showFullscreenPreview
-                          }
-                        } />
+          <LazyLoad>
+            <Carousel
+              autoplay={false}
+              defaultIndex={showFullscreenPreview}
+              style={carouselStyle2}>
+              {
+                assets.map((item, index) => {
+                  return <SlideItem item={item}
+                                    key={index}
+                                    highlightConfig={highlightConfig2} />
+                })}
+            </Carousel>
+          </LazyLoad>
         </div>
       </Modal>
     }
   </>
+}
+
+type SlideItemProps = {
+  item: DemoAssets
+  highlightConfig?: Omit<HighlightProps, 'url'>
+  imgMaxHeight?: string
+}
+
+const SlideItem: FC<SlideItemProps> = ({item, highlightConfig, imgMaxHeight = ''}) => {
+  return <div onClick={null}
+              className={'flex-1 flex justify-center min-w-0 min-h-0 overflow-hidden items-center'}>
+    {
+      item.type === 'text' &&
+      <span>{item.data as string}</span>
+    }
+    {
+      item.type === 'img' &&
+      <img className={imgMaxHeight + ' inline-block object-contain max-w-full'}
+           src={item.data}
+           alt="" />
+    }
+    {
+      item.type === 'code' &&
+      <Highlight url={item.data as string}
+                 {...highlightConfig} />
+    }
+  </div>
 }
 
 export default ContentComp

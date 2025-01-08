@@ -1,9 +1,6 @@
 import Link from "next/link";
 import React, {FC} from "react";
-// import IconComp from "./Icon";
 import ContentComp from "./content";
-
-// import Carousel from "../carousel";
 
 interface ModalProps {
   data: SimpleRecord
