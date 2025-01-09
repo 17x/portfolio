@@ -221,7 +221,6 @@ const data: TimelineNode[] = [
       {
         type: "simple",
         description: "Built and published react table plugin to NPM",
-        icon: "imgs/nzx.jpg",
         demo: {
           link: 'https://www.npmjs.com/package/rc-table-s',
           linkText: 'NPM Link',
