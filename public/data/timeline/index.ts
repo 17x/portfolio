@@ -123,11 +123,11 @@ const data: TimelineNode[] = [
     data: [
       {
         type: "cluster",
-        description: '1',
+        description: 'Miscellaneous plugins and tools',
         list: [
           {
-            link: '',
-            linkText: 'paint tool',
+            link: '/demos/misc/paint-board',
+            linkText: 'paint-board',
           },
           {
             link: '/demos/misc/color-picker',
@@ -208,7 +208,22 @@ const data: TimelineNode[] = [
             data: "imgs/2019-01.gif"
           }
         ]
-      }
+      },
+      {
+        type: "simple",
+        description: "Built and published react table plugin to NPM",
+        icon: "imgs/nzx.jpg",
+        demo: {
+          link: 'https://www.npmjs.com/package/rc-table-s',
+          openInNewTab: true
+        },
+        assets: [
+          {
+            type:'img',
+            data: 'imgs/2019-02.png'
+          }
+        ]
+      },
     ]
   },
   {
