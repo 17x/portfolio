@@ -42,11 +42,13 @@ const ClusterFeed: FC<ModalProps> = ({
               }
 
               return (
-                <Link href={item.link}
-                      onClick={item.openInNewTab ? null : (e) => onClick(e, item)}
-                      key={index}
-                      target={'_blank'}
-                      className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{_text}</Link>
+                <Link
+                  prefetch={false}
+                  href={item.link}
+                  onClick={item.openInNewTab ? null : (e) => onClick(e, item)}
+                  key={index}
+                  target={'_blank'}
+                  className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{_text}</Link>
               );
             })
           }</div>

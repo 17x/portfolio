@@ -22,7 +22,8 @@ const SimpleFeed: FC<ModalProps> = ({
                  stacks={demo && demo.stacks}>
       {
         demo && demo.link &&
-        <Link href={demo.link}
+        <Link prefetch={false}
+              href={demo.link}
               onClick={demo.openInNewTab ? null : (e) => onClick(e, demo)}
               target={'_blank'}
               className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{demo.linkText || 'Link'}</Link>

@@ -14,6 +14,9 @@ const nextConfig = {
   env: {
     DOC_URL: isProd ? '' : `http://${currentIp}:8080`
   },
+  experimental: {
+    // serverComponents: false
+  },
   compiler: {
     removeConsole: isProd,
   },

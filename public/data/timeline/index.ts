@@ -62,7 +62,7 @@ const data: TimelineNode[] = [
         type: "simple",
         description: "Developed CRM system and Website Generator system",
         demo: {
-          link: '1',
+          // link: '1',
           stacks: 'React, Redux, Typescript, Material-UI'
         },
         assets: [

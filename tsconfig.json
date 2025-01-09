@@ -25,18 +25,12 @@
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
-    "app/*.ts",
-    "components/*.ts",
-    "global/*.ts",
-    "hooks/*.ts",
-    "tpyes/*.ts",
-    "utils/*.ts",
-//    "**/*.tsx",
-//    "/Users/yahone/projects/lucasischow.github.io/docs/types/**/*.ts"
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules",
-//    "public",
-//    "out",
+    "public/**/*",
+    "out/**/*"
   ]
 }
