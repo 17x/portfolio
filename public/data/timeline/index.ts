@@ -179,7 +179,7 @@ const data: TimelineNode[] = [
         description: 'Responsible for refactoring projects, conducting technical research, and managing polyrepos.',
         demo: {
           // linkText: 'audio 3',
-          link: '/demos/misc/web-audio-demo/3'
+          // link: '/demos/misc/web-audio-demo/3'
         }
       },
     ]
