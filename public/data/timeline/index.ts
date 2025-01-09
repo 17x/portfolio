@@ -173,7 +173,15 @@ const data: TimelineNode[] = [
           // linkText: 'audio 3',
           link: '/demos/misc/web-audio-demo/3'
         }
-      }
+      },
+      {
+        type: 'simple',
+        description: 'Responsible for project refactoring, technical research, and polyrepo management.',
+        demo: {
+          // linkText: 'audio 3',
+          link: '/demos/misc/web-audio-demo/3'
+        }
+      },
     ]
   },
   {
@@ -417,7 +425,7 @@ const data: TimelineNode[] = [
       },
       {
         type: "simple",
-        description: "An imitated page for my first Frontend developer job interview",
+        description: "A mock webpage for my first frontend developer job interview",
         demo: {
           stacks: "HTML, CSS, JavaScript, JQuery",
           media: "l",

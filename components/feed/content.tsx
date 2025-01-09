@@ -58,13 +58,15 @@ const ContentComp: FC<Props> = ({
         </div>
       }
       <div className={'whitespace-pre-line content-center text-sm flex-1 ' + (icon ? '' : 'content-center')}>
-        <div className={`break-words text-neutral-800 first-letter:text-xl first-letter:mr-[1px]`}>
+        <div className={`break-words text-neutral-800 first-letter:text-lg first-letter:mr-[1px]`}>
           {
             _f
-              ? description.map((item, i) =>
-                <p className={'first:text-gray-600 first:font-medium pl-[0.9rem] mb-2 indent-[-0.9rem] first-line:indent-4'}
-                   key={i}>{decodeURIComponent(item)}</p>)
-              : <p className={'first:text-gray-600 first:font-medium'}>{decodeURIComponent(description)}</p>
+              ? description.map(
+                (item, i) =>
+                  <p className={'first:text-gray-600 pl-[0.9rem] mb-2 indent-[-0.9rem] first-line:indent-4'}
+                     key={i}>{decodeURIComponent(item)}</p>
+              )
+              : <p className={'first:text-gray-600'}>{decodeURIComponent(description)}</p>
           }
         </div>
 

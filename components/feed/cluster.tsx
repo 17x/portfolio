@@ -26,7 +26,7 @@ const ClusterFeed: FC<ModalProps> = ({
       <div className={'mt-1 pt-1 text-sm items-center'}>
         {
           LEN > 0 &&
-          <h1 className={'mr-2 my-2 text-gray-600 font-bold mb-1'}>Link{LEN > 1 && 's'}: </h1>
+          <h1 className={'mr-2 my-2 text-gray-600 mb-1'}>Link{LEN > 1 && 's'}: </h1>
         }
         <div className={'gap-x-2 gap-y-1 text-sm flex flex-wrap items-center'}>
           {
