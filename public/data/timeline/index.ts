@@ -316,7 +316,7 @@ const data: TimelineNode[] = [
         },
         icon: "imgs/ankai.png"
       },
-      {
+   /*   {
         type: "simple",
         description: "A SPA for job interview",
         demo: {
@@ -324,8 +324,14 @@ const data: TimelineNode[] = [
           link: "/demos/fzwjg/dist/",
           media: "s",
           linkText: "Demo link"
-        }
-      }
+        },
+        assets: [
+          {
+            type: 'code',
+            data: ''
+          }
+        ]
+      }*/
     ]
   },
   {
