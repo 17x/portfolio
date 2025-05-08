@@ -5,6 +5,26 @@ const data: TimelineNode[] = [
     data: [
       {
         type: "simple",
+        description: "React UI Library",
+        demo: {
+          openInNewTab: true,
+          linkText: 'Site',
+          link: 'https://lite-u.github.io/',
+          stacks: 'React, TypeScript'
+        }
+      },
+      {
+        type: "simple",
+        description: "Web App for create a design",
+        demo: {
+          openInNewTab: true,
+          linkText: 'Github Repo',
+          link: 'https://github.com/17x/vision-flow',
+          stacks: 'React, TypeScript, Redux, Tailwind CSS, Canvas, Vite, Eslint'
+        }
+      },
+      {
+        type: "simple",
         description: "Created the page you’re currently visiting.",
         demo: {
           openInNewTab: true,
@@ -12,7 +32,7 @@ const data: TimelineNode[] = [
           link: 'https://github.com/17x/portfolio',
           stacks: 'Next.js, TypeScript, and Tailwind CSS'
         }
-      }
+      },
     ]
   }, {
     year: "2024",
@@ -316,22 +336,22 @@ const data: TimelineNode[] = [
         },
         icon: "imgs/ankai.png"
       },
-   /*   {
-        type: "simple",
-        description: "A SPA for job interview",
-        demo: {
-          stacks: "AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)",
-          link: "/demos/fzwjg/dist/",
-          media: "s",
-          linkText: "Demo link"
-        },
-        assets: [
-          {
-            type: 'code',
-            data: ''
-          }
-        ]
-      }*/
+      /*   {
+           type: "simple",
+           description: "A SPA for job interview",
+           demo: {
+             stacks: "AngularJs, Ui-router, Gulp, Sass, and Python(data scraping)",
+             link: "/demos/fzwjg/dist/",
+             media: "s",
+             linkText: "Demo link"
+           },
+           assets: [
+             {
+               type: 'code',
+               data: ''
+             }
+           ]
+         }*/
     ]
   },
   {
