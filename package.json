@@ -1,10 +1,13 @@
 {
   "scripts": {
     "dev": "next dev",
-    "build": "next build && ./copy.sh",
+    "build": "next build",
     "build&copy": "next build && ./copy.sh",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out -r git@github.com:lucasischow/lucasischow.github.io.git"
+
   },
   "dependencies": {
     "lodash": "^4.17.21",
