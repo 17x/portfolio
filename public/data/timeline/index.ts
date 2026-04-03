@@ -5,6 +5,20 @@ const data: TimelineNode[] = [
     data: [
       {
         type: "simple",
+        description: "Composable canvas runtime monorepo for multi-editor products",
+        demo: {
+          openInNewTab: true,
+          linkText: 'Site',
+          link: 'https://github.com/17x/venus',
+          stacks: 'React 19, TypeScript, Vite, Tailwind CSS 4, Web Worker, SharedArrayBuffer, CanvasKit (Skia/WASM), FlatBuffers (schema), pnpm Workspace Monorepo, ESLint'
+        }
+      },
+      {
+        type: "simple",
+        description: "Started learning Japanese"
+      },
+      {
+        type: "simple",
         description: "React UI Library",
         demo: {
           openInNewTab: true,
