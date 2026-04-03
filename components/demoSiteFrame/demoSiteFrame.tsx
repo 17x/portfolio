@@ -1,5 +1,5 @@
-import DOC_URL from "../../global";
 import Modal from "../modal";
+import {resolveDemoUrl} from "../../lib/url";
 
 type Props = { demo: DemoLink, onClose: () => any }
 
@@ -16,7 +16,7 @@ const DemoSiteFrame = ({onClose, demo: {media, link}}: Props) => {
     viewPortWidth = 'w-[350px]'
     viewPortHeight = 'h-[650px]'
   }
-  const src = (link.indexOf('.') === -1 ? DOC_URL : '') + link
+  const src = resolveDemoUrl(link)
 
   return (
     <Modal onClose={onClose}>

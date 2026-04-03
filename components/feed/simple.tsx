@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, {FC} from "react";
 import ContentComp from "./content";
+import {resolveDemoUrl} from "../../lib/url";
 
 interface ModalProps {
   data: SimpleRecord
@@ -23,7 +24,7 @@ const SimpleFeed: FC<ModalProps> = ({
       {
         demo && demo.link &&
         <Link prefetch={false}
-              href={demo.link}
+              href={resolveDemoUrl(demo.link)}
               onClick={demo.openInNewTab ? null : (e) => onClick(e, demo)}
               target={'_blank'}
               className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{demo.linkText || 'Link'}</Link>

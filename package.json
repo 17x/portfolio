@@ -2,12 +2,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && touch out/.nojekyll",
-    "build&copy": "next build && ./copy.sh",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out -r git@github.com:lucasischow/lucasischow.github.io.git"
-
+    "lint": "next lint"
   },
   "dependencies": {
     "lodash": "^4.17.21",
@@ -23,7 +19,6 @@
     "@types/node": "22.0.0",
     "@types/react": "18.3.3",
     "autoprefixer": "^10.4.20",
-    "gh-pages": "^6.1.1",
     "ip": "^2.0.1",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",

@@ -4,6 +4,7 @@ import Carousel from "../carousel";
 import Highlight from "../highlight";
 import LazyLoad from "../lazyload/lazyLoad";
 import {HighlightProps} from "../highlight/highlight";
+import {resolvePublicAssetUrl} from "../../lib/url";
 
 interface Props extends Omit<GenericRecord<{}>, 'type'> {
   stacks?: string
@@ -52,7 +53,7 @@ const ContentComp: FC<Props> = ({
         icon && <div className={'mr-4 sm:mr-8 max-w-12 max-h-12 sm:max-w-20 sm:max-h-20 content-center flex'}>
           <LazyLoad>
             <img className={'object-contain'}
-                 src={icon}
+                 src={resolvePublicAssetUrl(icon)}
                  alt="" />
           </LazyLoad>
         </div>
@@ -158,12 +159,12 @@ const SlideItem: FC<SlideItemProps> = ({item, highlightConfig, imgMaxHeight = ''
     {
       item.type === 'img' &&
       <img className={imgMaxHeight + ' inline-block object-contain max-w-full'}
-           src={item.data}
+           src={resolvePublicAssetUrl(item.data)}
            alt="" />
     }
     {
       item.type === 'code' &&
-      <Highlight url={item.data as string}
+      <Highlight url={resolvePublicAssetUrl(item.data as string)}
                  {...highlightConfig} />
     }
   </div>

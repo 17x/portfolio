@@ -32,7 +32,7 @@ const Highlight = ({
     }
 
     get()
-  }, [])
+  }, [url])
 
   return (
     <div style={

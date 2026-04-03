@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, {FC} from "react";
 // import IconComp from "./Icon";
 import ContentComp from "./content";
+import {resolveDemoUrl} from "../../lib/url";
 // import SlideInFeeds from "./slideInFeeds";
 // import Modal from "../modal";
 
@@ -44,7 +45,7 @@ const ClusterFeed: FC<ModalProps> = ({
               return (
                 <Link
                   prefetch={false}
-                  href={item.link}
+                  href={resolveDemoUrl(item.link)}
                   onClick={item.openInNewTab ? null : (e) => onClick(e, item)}
                   key={index}
                   target={'_blank'}
