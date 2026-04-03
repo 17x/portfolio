@@ -1,5 +1,5 @@
-const SITE_BASE_PATH = process.env.NEXT_PUBLIC_SITE_BASE_PATH || '';
-const DEMO_BASE_URL = process.env.NEXT_PUBLIC_DEMO_BASE_URL || '';
+const SITE_BASE_PATH = import.meta.env.VITE_SITE_BASE_PATH || '';
+const DEMO_BASE_URL = import.meta.env.VITE_DEMO_BASE_URL || '';
 
 const ABSOLUTE_URL_RE = /^(?:[a-z]+:)?\/\//i;
 
@@ -15,7 +15,6 @@ export const withSiteBasePath = (value: string) => {
   }
 
   const normalizedPath = `/${trimLeadingSlash(value)}`;
-
   if (!SITE_BASE_PATH) {
     return normalizedPath;
   }

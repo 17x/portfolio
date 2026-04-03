@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React, {FC} from "react";
 import ContentComp from "./content";
 import {resolveDemoUrl} from "../../lib/url";
@@ -23,11 +22,11 @@ const SimpleFeed: FC<ModalProps> = ({
                  stacks={demo && demo.stacks}>
       {
         demo && demo.link &&
-        <Link prefetch={false}
-              href={resolveDemoUrl(demo.link)}
-              onClick={demo.openInNewTab ? null : (e) => onClick(e, demo)}
-              target={'_blank'}
-              className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{demo.linkText || 'Link'}</Link>
+        <a href={resolveDemoUrl(demo.link)}
+           onClick={demo.openInNewTab ? null : (e) => onClick(e, demo)}
+           target={'_blank'}
+           rel={'noreferrer'}
+           className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{demo.linkText || 'Link'}</a>
       }
 
     </ContentComp>

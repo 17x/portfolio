@@ -1,3 +1,1 @@
-import {lazy} from "react";
-
-export default lazy(() => import('./demoSiteFrame'))
+export {default} from './demoSiteFrame';

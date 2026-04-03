@@ -16,6 +16,7 @@ const DemoSiteFrame = ({onClose, demo: {media, link}}: Props) => {
     viewPortWidth = 'w-[350px]'
     viewPortHeight = 'h-[650px]'
   }
+
   const src = resolveDemoUrl(link)
 
   return (

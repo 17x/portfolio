@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {startTransition, useState} from 'react';
 import Modal from "../modal";
 import DemoSiteFrame from "../demoSiteFrame/demoSiteFrame";
 import SimpleFeed from "./simple";
@@ -8,7 +8,9 @@ const Index = ({data, sectionTheme}: { data: TimelineNodeRecord[], sectionTheme?
   const [demo, setDemo] = useState<DemoLink>(null)
   const openModal = (e: MouseEvent, demo: DemoLink) => {
     e.preventDefault()
-    setDemo(demo)
+    startTransition(() => {
+      setDemo(demo)
+    })
   }
 
   return (
@@ -30,7 +32,11 @@ const Index = ({data, sectionTheme}: { data: TimelineNodeRecord[], sectionTheme?
       }
 
       {demo &&
-        <DemoSiteFrame demo={demo} onClose={() => setDemo(null)} />
+        <DemoSiteFrame demo={demo} onClose={() => {
+          startTransition(() => {
+            setDemo(null)
+          })
+        }} />
       }
     </div>
   )

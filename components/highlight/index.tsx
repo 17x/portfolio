@@ -1,3 +1,1 @@
-import {lazy} from "react";
-
-export default lazy(() => import('./highlight'));
+export {default} from './highlight';

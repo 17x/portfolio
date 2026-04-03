@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react";
+import React, {FC, startTransition, useState} from "react";
 import Modal from "../modal";
 import Carousel from "../carousel";
 import Highlight from "../highlight";
@@ -96,7 +96,9 @@ const ContentComp: FC<Props> = ({
         </LazyLoad>
 
         <button
-          onClick={() => setShowFullscreenPreview(carouselIndex)}
+          onClick={() => startTransition(() => {
+            setShowFullscreenPreview(carouselIndex)
+          })}
           className={`absolute right-0 bottom-0 z-20 p-2 rounded-full bg-${themeColor} opacity-20 hover:opacity-100 flex items-center justify-center`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +124,11 @@ const ContentComp: FC<Props> = ({
 
     {
       showFullscreenPreview >= 0 &&
-      <Modal onClose={() => setShowFullscreenPreview(-1)}>
+      <Modal onClose={() => {
+        startTransition(() => {
+          setShowFullscreenPreview(-1)
+        })
+      }}>
         <div className={'w-[90vw] h-[90vh] overflow-hidden'}>
           <LazyLoad>
             <Carousel

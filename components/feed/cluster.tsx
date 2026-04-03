@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React, {FC} from "react";
 // import IconComp from "./Icon";
 import ContentComp from "./content";
@@ -43,13 +42,13 @@ const ClusterFeed: FC<ModalProps> = ({
               }
 
               return (
-                <Link
-                  prefetch={false}
+                <a
                   href={resolveDemoUrl(item.link)}
                   onClick={item.openInNewTab ? null : (e) => onClick(e, item)}
                   key={index}
                   target={'_blank'}
-                  className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{_text}</Link>
+                  rel={'noreferrer'}
+                  className={'underline mr-2 text-blue-400 hover:text-blue-800'}>{_text}</a>
               );
             })
           }</div>
